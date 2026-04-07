@@ -1,0 +1,55 @@
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid #FFD700; /* West Gold */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 2rem;
+  color: #FFD700;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  text-transform: uppercase;
+}
+
+.nav-links button:hover {
+  color: #FFD700;
+}
+
+.nav-links button.active {
+  color: #FFD700;
+  border-bottom: 2px solid #FFD700;
+}
+
+/* Adjust main content for fixed navbar */
+.main-content {
+  padding-top: 80px; /* Height of navbar */
+  min-height: 100vh;
+}

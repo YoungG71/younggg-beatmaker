@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@400;500;700&family=UnifrakturMaguntia&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-white font-street uppercase overflow-x-hidden tracking-wide;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-street uppercase;
+  }
+}
+
+body { 
+  margin: 0; 
+  padding: 0; 
+  /* L'image de fond en PNG */ 
+  background-image: url('/background.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; 
+  background-repeat: no-repeat; 
+  
+  /* Le filtre sombre (OBLIGATOIRE pour lire le texte) */ 
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(30, 0, 40, 0.9)), url('/background.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; 
+  
+  color: white; /* Force le texte en blanc */ 
+}
+
+.text-stroke-gold {
+  -webkit-text-stroke: 1px #FFD700;
+}
+
+/* Style du conteneur principal de la page Home */ 
+.home-page { 
+  width: 100%; 
+  min-height: 100vh; 
+  
+  /* GESTION DE L'IMAGE DE FOND */ 
+  background-image: url('/home-bg.png'); 
+  background-position: center center; 
+  background-repeat: no-repeat;      /* EMPÊCHE L'IMAGE DE SE RÉPÉTER */ 
+  background-attachment: fixed;      /* L'image reste fixe quand on scrolle */ 
+  background-size: cover;            /* L'image s'étire pour couvrir tout l'écran sans couper */ 
+  
+  /* AJOUT DU FILTRE SOMBRE (Overlay) */ 
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85)), url('/home-bg.png'); 
+  /* On répète les propriétés background ici pour être sûr qu'elles s'appliquent avec le gradient */ 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-size: cover; 
+} 
+
+/* FORCE LA TRANSPARENCE DES SECTIONS INTÉRIEURES */ 
+/* Cible toutes les div, sections, ou cartes à l'intérieur de la home pour qu'elles n'aient pas de fond noir */ 
+.home-page > section, 
+.home-page div, 
+.bio-section, 
+.video-grid { 
+  background-color: transparent !important; 
+  background: transparent !important; 
+}
+
+/* Stripe CD Button Hover Effect */
+.stripe-cd-btn:hover {
+    background: #FFD700 !important;
+    color: #000 !important;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-blink {
+  animation: blink 1.5s infinite;
+}
