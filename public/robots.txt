@@ -1,0 +1,5 @@
+# robots.txt for Young G West Coast Beatmaker
+User-agent: *
+Allow: /
+
+Sitemap: https://younggwestcoastbeatmaker.com/sitemap.xml
