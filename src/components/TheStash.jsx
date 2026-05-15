@@ -59,6 +59,7 @@ const TheStash = () => {
                           src={item.image[0]} 
                           alt="Young G Album Volume 1" 
                           className="w-full h-full object-cover rounded shadow-2xl border border-gray-800"
+                          loading="lazy"
                         />
                       </div>
                       <div className="relative w-48 h-48 transform rotate-6 -translate-x-12 transition-transform duration-500 group-hover:rotate-12 z-20">
@@ -66,6 +67,7 @@ const TheStash = () => {
                           src={item.image[1]} 
                           alt="Young G Album Volume 2" 
                           className="w-full h-full object-cover rounded shadow-2xl border border-gray-800"
+                          loading="lazy"
                         />
                       </div>
                     </div>
@@ -75,6 +77,7 @@ const TheStash = () => {
                         src={item.image} 
                         alt={item.name} 
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
                       />
                     </div>
                   )}
