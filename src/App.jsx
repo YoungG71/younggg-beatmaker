@@ -8,13 +8,44 @@ import TheStash from './components/TheStash';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-function App() {
-  const [currentView, setCurrentView] = useState('HOME');
+const VIEW_TO_HASH = {
+  HOME: '/',
+  MUSIC: '#music',
+  BEAT_STORE: '#beat-store',
+  SHOP: '#shop',
+  CONTACT: '#contact',
+};
 
-  // Scroll to top when view changes
+const HASH_TO_VIEW = {
+  '/': 'HOME',
+  '#music': 'MUSIC',
+  '#beat-store': 'BEAT_STORE',
+  '#shop': 'SHOP',
+  '#contact': 'CONTACT',
+};
+
+function getViewFromHash() {
+  const hash = window.location.hash || '/';
+  return HASH_TO_VIEW[hash] || 'HOME';
+}
+
+function App() {
+  const [currentView, setCurrentView] = useState(getViewFromHash());
+
+  // Sync URL hash when view changes
   useEffect(() => {
+    window.location.hash = VIEW_TO_HASH[currentView] || '/';
     window.scrollTo(0, 0);
   }, [currentView]);
+
+  // Sync view when hash changes (browser back/forward)
+  useEffect(() => {
+    const onHashChange = () => {
+      setCurrentView(getViewFromHash());
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   const renderView = () => {
     switch(currentView) {
