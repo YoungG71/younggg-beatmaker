@@ -31,6 +31,16 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Generate static HTML files for SPA routes (SEO)
+        shell: bash
+        run: |
+          ROUTES=("music" "beat-store" "shop" "contact")
+          for route in "${ROUTES[@]}"; do
+            mkdir -p "./dist/$route"
+            cp ./dist/index.html "./dist/$route/index.html"
+          done
+          echo "Pages générées: ${ROUTES[*]}"
+
       - name: Copy index.html as 404.html (SPA fallback for GitHub Pages)
         run: cp ./dist/index.html ./dist/404.html
 
