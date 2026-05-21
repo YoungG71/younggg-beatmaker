@@ -2,6 +2,23 @@ import React from 'react';
 import { musicData } from '../musicData';
 import { Disc } from 'lucide-react';
 
+const LazySpotifyEmbed = ({ album }) => {
+  return (
+    <div className="w-full bg-black p-2">
+      <iframe 
+        src={`https://open.spotify.com/embed/${album.type || 'album'}/${album.spotifyId}?utm_source=generator&theme=0`} 
+        width="100%" 
+        height="352" 
+        frameBorder="0" 
+        allowFullScreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        style={{ borderRadius: '12px', backgroundColor: '#000', opacity: 0.9 }}
+      ></iframe>
+    </div>
+  );
+};
+
 const Discography = () => {
   // Sorting logic: Newest to Oldest based on 'year'
   const sortedAlbums = [...musicData].sort((a, b) => parseInt(b.year) - parseInt(a.year));
@@ -47,22 +64,8 @@ const Discography = () => {
                 </h2>
               </div>
               
-              {/* Spotify Embed */}
-              <div className="w-full bg-black p-2">
-                <div className="spotify-wrapper">
-                    <iframe 
-                      src={`https://open.spotify.com/embed/${album.type || 'album'}/${album.spotifyId}?utm_source=generator&theme=0`} 
-                      width="100%" 
-                      height="352" 
-                      frameBorder="0" 
-                      allowFullScreen="" 
-                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                      loading="lazy"
-                      className="opacity-90 hover:opacity-100 transition-opacity duration-300"
-                      style={{ borderRadius: '12px', backgroundColor: '#000' }}
-                    ></iframe>
-                </div>
-              </div>
+              {/* Spotify Embed with Lazy Load */}
+              <LazySpotifyEmbed album={album} />
             </div>
           ))}
         </div>

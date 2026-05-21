@@ -1,5 +1,6 @@
 import React from 'react';
 import { artistData } from '../artistData';
+import LazyEmbed from './LazyEmbed';
 
 const videos = [
   "BV-e07Nsu5E", // I Said Biatch
@@ -49,17 +50,11 @@ const HomeContent = () => {
                 key={index} 
                 className="aspect-video w-full border border-west-gold shadow-[0_0_15px_rgba(0,0,0,0.8)] hover:shadow-[0_0_20px_rgba(255,215,0,0.3)] transition-all duration-300"
               >
-                <iframe
-                    width="100%"
-                    height="100%"
-                    src={`https://www.youtube.com/embed/${videoId}`}
-                    title={`Young G West Coast Music Video ${index + 1}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                    className="w-full h-full"
-                  ></iframe>
+                <LazyEmbed
+                  videoId={videoId}
+                  title={`Young G West Coast Music Video ${index + 1}`}
+                  className="w-full h-full"
+                />
               </div>
             ))}
           </div>

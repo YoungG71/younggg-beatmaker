@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background Image REMOVED to show global home-bg.png */}
       
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
-        <h1 className="text-6xl md:text-9xl mb-4 text-transparent bg-clip-text bg-gradient-to-b from-west-gold to-west-gold-dark drop-shadow-lg filter tracking-wider font-gothic lowercase first-letter:uppercase">
+        <h1 className="text-6xl md:text-9xl mb-4 text-west-gold tracking-wider font-gothic animate-neon" style={{ WebkitTextStroke: '4px black' }}>
           {artistData.name}
         </h1>
         <div className="h-1 w-32 mx-auto bg-west-gold shadow-[0_0_10px_#FFD700]"></div>

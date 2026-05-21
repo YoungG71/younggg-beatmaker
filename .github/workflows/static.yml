@@ -1,9 +1,11 @@
-# Script automatique pour déployer un projet Vite sur GitHub Pages
 name: Deploy Vite Site
 
 on:
   push:
-    branches: ["main"] # Vérifie que ta branche s'appelle bien "main" (sinon change en "master")
+    branches: ["main"]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: read
@@ -20,7 +22,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: 'npm'
 
       - name: Install dependencies
@@ -29,13 +31,16 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Copy index.html as 404.html (SPA fallback for GitHub Pages)
+        run: cp ./dist/index.html ./dist/404.html
+
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # C'est ici que Vite range tes fichiers compilés
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
