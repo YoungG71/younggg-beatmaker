@@ -28,11 +28,11 @@ const Discography = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-center mb-16">
-          <Disc className="w-10 h-10 text-west-gold mr-4 animate-spin-slow" />
+          <Disc className="w-10 h-10 text-west-gold mr-4 animate-vinyl-spin" />
           <h2 className="text-5xl md:text-7xl text-center text-west-gold drop-shadow-[0_0_5px_rgba(255,215,0,0.5)]">
             Full Discography
           </h2>
-          <Disc className="w-10 h-10 text-west-gold ml-4 animate-spin-slow" />
+          <Disc className="w-10 h-10 text-west-gold ml-4 animate-vinyl-spin" style={{ animationDirection: 'reverse' }} />
         </div>
 
         {/* Grid */}

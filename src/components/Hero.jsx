@@ -10,8 +10,8 @@ const Hero = () => {
         <h1 className="text-6xl md:text-9xl mb-4 text-west-gold tracking-wider font-gothic animate-neon" style={{ WebkitTextStroke: '4px black' }}>
           {artistData.name}
         </h1>
-        <div className="h-1 w-32 mx-auto bg-west-gold shadow-[0_0_10px_#FFD700]"></div>
-        <h2 className="text-2xl md:text-4xl text-gray-200 tracking-widest mt-6">
+        <div className="h-1 w-32 mx-auto bg-west-gold shadow-[0_0_10px_#FFD700] animate-gold-glow"></div>
+        <h2 className="text-2xl md:text-4xl text-gray-200 tracking-widest mt-6 animate-lowrider-bounce">
           {artistData.tagline}
         </h2>
       </div>

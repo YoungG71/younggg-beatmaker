@@ -29,11 +29,11 @@ const BeatStore = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <Music className="w-12 h-12 text-west-gold" />
+            <Music className="w-12 h-12 text-west-gold animate-lowrider-bounce" />
             <h2 className="text-4xl md:text-6xl text-west-gold font-sans font-black tracking-tighter uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               Exclusive West Coast Beats
             </h2>
-            <Music className="w-12 h-12 text-west-gold" />
+            <Music className="w-12 h-12 text-west-gold animate-lowrider-bounce" style={{ animationDelay: '0.5s' }} />
           </div>
           
           <div className="inline-block bg-black/50 border-2 border-west-gold/50 rounded-xl p-6 backdrop-blur-sm shadow-[0_0_20px_rgba(255,215,0,0.1)]">

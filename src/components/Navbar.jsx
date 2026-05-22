@@ -49,7 +49,7 @@ const Navbar = () => {
 
         {upTheLevelCD && (
           <div 
-            className="hidden md:flex items-center gap-2 cursor-pointer animate-blink p-1 rounded-md border border-west-gold bg-black/50"
+            className="hidden md:flex items-center gap-2 cursor-pointer animate-grammy-glow p-1 rounded-md border border-west-gold bg-black/50"
             onClick={() => { navigate('/shop'); window.scrollTo(0, 0); }}
           >
             <img src={upTheLevelCD.image} alt={upTheLevelCD.name} className="h-10 w-10 object-cover rounded-full border border-west-gold" />

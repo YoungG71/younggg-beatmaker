@@ -20,7 +20,7 @@ const TheStash = () => {
           {artistData.shop.map((item) => (
             <div 
               key={item.id} 
-              className={`bg-black border-4 ${item.bestDeal ? 'border-west-gold shadow-[0_0_30px_rgba(255,215,0,0.3)]' : 'border-west-gold/50'} p-6 md:p-8 rounded-xl relative overflow-hidden group transition-all duration-300 hover:border-west-gold`}
+              className={`bg-black border-4 ${item.bestDeal ? 'border-west-gold shadow-[0_0_30px_rgba(255,215,0,0.3)] animate-gold-glow' : 'border-west-gold/50'} p-6 md:p-8 rounded-xl relative overflow-hidden group transition-all duration-300 hover:border-west-gold`}
             >
               {/* Best Deal Badge */}
               {item.bestDeal && (
@@ -89,7 +89,7 @@ const TheStash = () => {
                     <h4 className="text-west-gold tracking-widest text-sm mb-1 uppercase">{item.subtitle}</h4>
                     <h3 className="text-3xl md:text-4xl text-white mb-4 leading-tight">{item.name}</h3>
                     <p className="text-gray-400 text-lg mb-4 leading-relaxed border-l-2 border-west-purple pl-4">{item.description}</p>
-                    <p className="text-4xl text-west-gold font-bold mb-6 drop-shadow-md">{item.price} €</p>
+                    <p className="text-4xl text-west-gold font-bold mb-6 drop-shadow-md gold-shimmer-text">{item.price} €</p>
                   </div>
 
                   <div className="payment-buttons" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '15px' }}>

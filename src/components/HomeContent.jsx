@@ -38,7 +38,7 @@ const HomeContent = () => {
         <div>
           <div className="flex items-center justify-center mb-16">
             <div className="h-px w-24 bg-gradient-to-r from-transparent to-west-gold"></div>
-            <h3 className="text-4xl md:text-5xl text-west-gold font-street mx-6 tracking-widest">
+            <h3 className="text-4xl md:text-5xl text-west-gold font-street mx-6 tracking-widest animate-lowrider-bounce">
               VIDEO PRODUCTIONS
             </h3>
             <div className="h-px w-24 bg-gradient-to-l from-transparent to-west-gold"></div>

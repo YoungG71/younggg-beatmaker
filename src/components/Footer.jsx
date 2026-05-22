@@ -33,16 +33,16 @@ const Footer = () => {
 
         {/* Center: Socials */}
         <div className="flex gap-6">
-          <a href={artistData.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-west-gold transition-colors transform hover:scale-110">
+          <a href={artistData.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-west-gold transition-all duration-300 transform hover:scale-125 hover:-translate-y-1">
             <Instagram className="w-8 h-8" />
           </a>
-          <a href={artistData.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-west-gold transition-colors transform hover:scale-110">
+          <a href={artistData.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-west-gold transition-all duration-300 transform hover:scale-125 hover:-translate-y-1">
             <Facebook className="w-8 h-8" />
           </a>
-          <a href={artistData.socials.tiktok} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-west-gold transition-colors transform hover:scale-110">
+          <a href={artistData.socials.tiktok} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-west-gold transition-all duration-300 transform hover:scale-125 hover:-translate-y-1">
             <TikTok className="w-8 h-8" />
           </a>
-          <a href={artistData.socials.youtube} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-west-gold transition-colors transform hover:scale-110">
+          <a href={artistData.socials.youtube} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-west-gold transition-all duration-300 transform hover:scale-125 hover:-translate-y-1">
             <Youtube className="w-8 h-8" />
           </a>
         </div>
