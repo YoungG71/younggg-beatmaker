@@ -8,35 +8,6 @@ export const artistData = {
     tiktok: "https://www.tiktok.com/@youngg7134?is_from_webapp=1&sender_device=pc",
     youtube: "https://www.youtube.com/@YoungG71"
   },
-  albums: [
-    {
-      id: 1,
-      title: "The Golden Era",
-      year: "2023",
-      cover: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=1000&auto=format&fit=crop", // Placeholder
-      spotifyId: "07bIdDDe3I3jfdtoZbVP03", // Placeholder ID (e.g., Linkin Park or generic)
-      price: "19.99",
-      isNew: true
-    },
-    {
-      id: 2,
-      title: "Midnight Cruiser",
-      year: "2022",
-      cover: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=1000&auto=format&fit=crop",
-      spotifyId: "37i9dQZF1DX0XUsuxWHRQd",
-      price: "14.99",
-      isNew: false
-    },
-    {
-      id: 3,
-      title: "Palm Trees & Hennessy",
-      year: "2021",
-      cover: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop",
-      spotifyId: "37i9dQZF1DX0XUsuxWHRQd",
-      price: "12.99",
-      isNew: false
-    }
-  ],
   shop: [
     {
       id: 204,
