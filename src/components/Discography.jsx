@@ -24,8 +24,9 @@ const Discography = () => {
   const sortedAlbums = [...musicData].sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
   return (
-    <section className="py-32 px-4 min-h-screen bg-west-black relative">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-32 px-4 min-h-screen relative overflow-hidden" style={{ background: "url('/vyniles.webp') center center / cover no-repeat fixed" }}>
+      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-center mb-16">
           <Disc className="w-10 h-10 text-west-gold mr-4 animate-vinyl-spin" />

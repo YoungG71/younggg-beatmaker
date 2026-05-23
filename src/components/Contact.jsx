@@ -2,14 +2,15 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section id="contact" style={{ background: '#000', padding: '80px 20px', textAlign: 'center', borderTop: '1px solid #333' }}>
-      <h2 style={{ color: '#FFD700', textTransform: 'uppercase', letterSpacing: '5px', marginBottom: '10px' }}>CONTACT</h2>
-      <h2 style={{ color: '#888', marginBottom: '40px', fontSize: '1.2rem', fontWeight: 'normal', letterSpacing: '2px' }}>Questions about a beat or a CD? Drop a message below.</h2>
+    <section id="contact" style={{ background: "url('/contact.webp') center center / cover no-repeat fixed", padding: '80px 20px', textAlign: 'center', borderTop: '1px solid #333', position: 'relative' }}>
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.70)' }}></div>
+      <h2 style={{ color: '#FFD700', textTransform: 'uppercase', letterSpacing: '5px', marginBottom: '10px', position: 'relative', zIndex: 10 }}>CONTACT</h2>
+      <h2 style={{ color: '#888', marginBottom: '40px', fontSize: '1.2rem', fontWeight: 'normal', letterSpacing: '2px', position: 'relative', zIndex: 10 }}>Questions about a beat or a CD? Drop a message below.</h2>
 
       <form 
         action="https://formspree.io/f/xreqdqej" 
         method="POST" 
-        style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'left', background: '#0a0a0a', padding: '30px', borderRadius: '10px', border: '1px solid #1a1a1a' }}
+        style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'left', background: '#0a0a0a', padding: '30px', borderRadius: '10px', border: '1px solid #1a1a1a', position: 'relative', zIndex: 10 }}
       >
         
         <div style={{ marginBottom: '20px' }}>

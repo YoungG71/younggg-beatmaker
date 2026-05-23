@@ -20,8 +20,7 @@ export default {
         'street': ['"Oswald"', 'sans-serif'],
       },
       backgroundImage: {
-        'vinyl': "url('https://www.transparenttextures.com/patterns/vinyl.png')",
-        'paisley': "url('https://www.transparenttextures.com/patterns/dark-matter.png')", // Placeholder for paisley
+        'vinyl': "url('/vyniles.png')",
       },
       keyframes: {
         'vinyl-spin': {

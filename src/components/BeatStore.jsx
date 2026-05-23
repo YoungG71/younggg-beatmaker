@@ -23,8 +23,9 @@ const BeatStore = () => {
   };
 
   return (
-    <section id="beat-store" className="py-20 px-4 bg-zinc-900 border-t-4 border-west-gold relative">
-      <div className="max-w-7xl mx-auto">
+    <section id="beat-store" className="py-20 px-4 border-t-4 border-west-gold relative overflow-hidden" style={{ background: "url('/beatstore.webp') center center / cover no-repeat fixed" }}>
+      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="relative z-10 max-w-7xl mx-auto">
         
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -114,7 +115,7 @@ const BeatStore = () => {
                 href="https://buy.stripe.com/cNi9AU7HYg5DgFu4bA73G00" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full p-8 bg-black border-[3px] border-[#FFD700] text-[#FFD700] rounded-xl transition-all duration-300 flex flex-col items-center justify-center hover:bg-[#FFD700] hover:text-black hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,215,0,0.3)] group"
+                className="w-full p-8 bg-black border-[3px] border-[#FFD700] text-[#FFD700] rounded-xl transition-all duration-300 flex flex-col items-center justify-center hover:bg-[#FFD700] hover:text-black hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,215,0,0.3)] group h-[200px]"
               >
                 <span className="text-2xl font-black mb-1.5">💳 CREDIT CARD</span>
                 <span className="text-sm text-[#FFD700] opacity-80 tracking-widest group-hover:text-black">
@@ -130,7 +131,7 @@ const BeatStore = () => {
 
             {/* PayPal Card */}
             <div className="flex-1 min-w-[300px] max-w-[380px] flex flex-col items-center">
-              <div className="w-full p-6 bg-[#FFD700] border-[3px] border-[#FFD700] rounded-xl flex flex-col items-center shadow-lg box-border">
+              <div className="w-full p-8 bg-[#FFD700] border-[3px] border-[#FFD700] rounded-xl flex flex-col items-center shadow-lg box-border h-[200px]">
                 <span className="text-black text-2xl font-black mb-4">🅿️ PAYPAL</span>
                 
                 <div id="paypal-button-container" className="w-full">
