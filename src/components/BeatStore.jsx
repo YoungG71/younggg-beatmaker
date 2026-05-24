@@ -24,7 +24,7 @@ const BeatStore = () => {
 
   return (
     <section id="beat-store" className="py-20 px-4 border-t-4 border-west-gold relative overflow-hidden" style={{ background: "url('/beatstore.webp') center center / cover no-repeat fixed" }}>
-      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
       <div className="relative z-10 max-w-7xl mx-auto">
         
         {/* Header Section */}

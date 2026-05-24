@@ -5,7 +5,7 @@ import { ShoppingBag, DollarSign } from 'lucide-react';
 const TheStash = () => {
   return (
     <section className="py-20 px-4 relative overflow-hidden" style={{ background: "url('/shop.webp') center center / cover no-repeat fixed" }}>
-      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-6xl md:text-8xl text-center text-west-gold mb-8 drop-shadow-[0_0_5px_rgba(255,215,0,0.5)] font-gothic tracking-widest">
           BUY NOW

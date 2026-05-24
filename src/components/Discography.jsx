@@ -13,7 +13,7 @@ const LazySpotifyEmbed = ({ album }) => {
         allowFullScreen="" 
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"
-        style={{ borderRadius: '12px', backgroundColor: '#000', opacity: 0.9 }}
+        style={{ borderRadius: '12px', backgroundColor: '#000' }}
       ></iframe>
     </div>
   );
@@ -25,7 +25,7 @@ const Discography = () => {
 
   return (
     <section className="py-32 px-4 min-h-screen relative overflow-hidden" style={{ background: "url('/vyniles.webp') center center / cover no-repeat fixed" }}>
-      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-center mb-16">

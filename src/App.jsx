@@ -31,7 +31,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen text-white selection:bg-west-gold selection:text-west-black overflow-x-hidden">
-        <div className="fixed inset-0 z-0 pointer-events-none opacity-10 bg-vinyl mix-blend-overlay"></div>
+        <div className="fixed inset-0 z-0 pointer-events-none opacity-15 bg-vinyl mix-blend-overlay"></div>
         
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />

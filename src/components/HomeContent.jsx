@@ -28,7 +28,7 @@ const HomeContent = () => {
           </h2>
           
           <div className="max-w-4xl mx-auto">
-            <p className="text-xl md:text-3xl text-gray-100 font-street tracking-wide leading-relaxed drop-shadow-lg bg-black/60 p-8 rounded-xl border border-west-gold/30 backdrop-blur-sm">
+            <p className="text-xl md:text-3xl text-gray-100 font-street tracking-wide leading-relaxed drop-shadow-lg bg-black/20 p-8 rounded-xl border border-west-gold/30 backdrop-blur-sm">
               {artistData.bio}
             </p>
           </div>
