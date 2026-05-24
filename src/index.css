@@ -11,21 +11,12 @@
   }
 }
 
-body { 
-  margin: 0; 
-  padding: 0; 
-  background: url('/background.webp') center center / cover no-repeat fixed;
-  color: white; 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: white;
   position: relative;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background: rgba(0, 0, 0, 0.30);
-  pointer-events: none;
 }
 
 .text-stroke-gold {
