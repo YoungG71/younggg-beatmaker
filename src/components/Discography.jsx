@@ -38,16 +38,16 @@ const Discography = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {sortedAlbums.map((album) => (
-            <div 
-              key={album.id} 
-              className="group relative bg-black border-4 border-west-gold rounded-lg overflow-hidden shadow-[0_0_15px_rgba(184,134,11,0.2)] hover:shadow-[0_0_25px_rgba(255,215,0,0.4)] transition-all duration-300"
+            <div
+              key={album.id}
+              className="group relative bg-black border-4 border-west-gold rounded-lg overflow-hidden shadow-[0_0_15px_rgba(184,134,11,0.2)] hover:shadow-[0_0_35px_rgba(255,215,0,0.6)] hover:-translate-y-2 transition-all duration-500 ease-out"
               style={{ backgroundColor: '#000000' }}
             >
               {/* Corner Accents */}
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-west-gold z-20"></div>
-              <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-west-gold z-20"></div>
-              <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-west-gold z-20"></div>
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-west-gold z-20"></div>
+              <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-west-gold z-20 group-hover:border-white transition-colors duration-300"></div>
+              <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-west-gold z-20 group-hover:border-white transition-colors duration-300"></div>
+              <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-west-gold z-20 group-hover:border-white transition-colors duration-300"></div>
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-west-gold z-20 group-hover:border-white transition-colors duration-300"></div>
 
               {/* Release Year Label - West Coast Style */}
               <div className="bg-black border-b-2 border-west-gold/50 p-4 text-center relative z-10">

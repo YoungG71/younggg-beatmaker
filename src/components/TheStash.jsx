@@ -18,9 +18,9 @@ const TheStash = () => {
 
         <div className="grid grid-cols-1 gap-12 max-w-5xl mx-auto">
           {artistData.shop.map((item) => (
-            <div 
-              key={item.id} 
-              className={`bg-black border-4 ${item.bestDeal ? 'border-west-gold shadow-[0_0_30px_rgba(255,215,0,0.3)] animate-gold-glow' : 'border-west-gold/50'} p-6 md:p-8 rounded-xl relative overflow-hidden group transition-all duration-300 hover:border-west-gold`}
+            <div
+              key={item.id}
+              className={`bg-black border-4 ${item.bestDeal ? 'border-west-gold shadow-[0_0_30px_rgba(255,215,0,0.3)] animate-gold-glow' : 'border-west-gold/50'} p-6 md:p-8 rounded-xl relative overflow-hidden group transition-all duration-500 ease-out hover:border-west-gold hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_0_40px_rgba(255,215,0,0.5)]`}
             >
               {/* Best Deal Badge */}
               {item.bestDeal && (

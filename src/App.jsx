@@ -9,6 +9,7 @@ import TheStash from './components/TheStash';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Background from './components/Background';
+import GoldParticles from './components/GoldParticles';
 
 function HomePage() {
   return (
@@ -33,6 +34,7 @@ function App() {
     <BrowserRouter>
       <div className="min-h-screen text-white selection:bg-west-gold selection:text-west-black overflow-x-hidden">
         <Background />
+        <GoldParticles />
         
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />

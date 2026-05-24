@@ -50,9 +50,9 @@ const BeatStore = () => {
         {/* Beats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {beatIds.map((id) => (
-            <div 
+            <div
               key={id}
-              className="bg-black border-2 border-gray-700 hover:border-west-gold rounded-lg p-6 shadow-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] group flex flex-col gap-4"
+              className="bg-black border-2 border-gray-700 hover:border-west-gold rounded-lg p-6 shadow-lg transition-all duration-500 ease-out hover:shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:-translate-y-2 hover:scale-[1.02] group flex flex-col gap-4"
             >
               <div className="flex justify-between items-center border-b border-gray-800 pb-2 mb-2">
                 <h4 className="text-xl text-west-gold font-bold tracking-widest">
@@ -110,8 +110,8 @@ const BeatStore = () => {
             
             {/* Stripe Card */}
             <div className="flex-1 min-w-[300px] max-w-[380px] flex flex-col items-center">
-              <a 
-                href="https://buy.stripe.com/cNi9AU7HYg5DgFu4bA73G00" 
+              <a
+                href="https://buy.stripe.com/cNi9AU7HYg5DgFu4bA73G00"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full p-8 bg-black border-[3px] border-[#FFD700] text-[#FFD700] rounded-xl transition-all duration-300 flex flex-col items-center justify-center hover:bg-[#FFD700] hover:text-black hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,215,0,0.3)] group h-[200px]"
@@ -120,9 +120,9 @@ const BeatStore = () => {
                 <span className="text-sm text-[#FFD700] opacity-80 tracking-widest group-hover:text-black">
                   SECURE VIA <strong>STRIPE</strong>
                 </span>
-                <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_and_MasterCard_logo.svg/1000px-Visa_and_MasterCard_logo.svg.png" 
-                  alt="Visa Mastercard" 
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_and_MasterCard_logo.svg/1000px-Visa_and_MasterCard_logo.svg.png"
+                  alt="Visa Mastercard"
                   className="h-[22px] mt-5 object-contain filter brightness-150 group-hover:brightness-0 transition-all"
                 />
               </a>
@@ -138,24 +138,24 @@ const BeatStore = () => {
                     <input type="hidden" name="cmd" value="_s-xclick" />
                     <input type="hidden" name="hosted_button_id" value="5468E4D9UBUNU" />
                     <input type="hidden" name="on0" value="Number of the beat and your email." />
-                    <input 
-                      type="text" 
-                      name="os0" 
-                      maxLength="200" 
-                      placeholder="Beat #..." 
-                      required 
+                    <input
+                      type="text"
+                      name="os0"
+                      maxLength="200"
+                      placeholder="Beat #..."
+                      required
                       className="w-full bg-white text-black text-center text-sm p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black/20 font-sans shadow-inner"
                     />
                     <input type="hidden" name="currency_code" value="EUR" />
                     
                     <div className="transform hover:scale-105 transition-transform duration-200 w-full flex justify-center">
-                      <input 
-                        type="image" 
-                        src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" 
-                        border="0" 
-                        name="submit" 
-                        title="PayPal - The safer, easier way to pay online!" 
-                        alt="Buy Now" 
+                      <input
+                        type="image"
+                        src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+                        border="0"
+                        name="submit"
+                        title="PayPal - The safer, easier way to pay online!"
+                        alt="Buy Now"
                         className="h-[40px] w-auto object-contain filter drop-shadow-md"
                       />
                     </div>
