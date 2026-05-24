@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const backgrounds = {
@@ -9,43 +9,51 @@ const backgrounds = {
   '/contact': '/contact.webp',
 };
 
+// Preload all background images immediately
+Object.values(backgrounds).forEach((url) => {
+  const img = new Image();
+  img.src = url;
+});
+
 const Background = () => {
   const location = useLocation();
-  const [currentBg, setCurrentBg] = useState(backgrounds['/']);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  
+  const [bgImage, setBgImage] = useState(backgrounds['/']);
+  const [isVisible, setIsVisible] = useState(true);
+  const prevPathRef = useRef('/');
+
   useEffect(() => {
-    // Find the matching background for current path
-    let bgImage = backgrounds['/']; // default to home
-    for (const [path, image] of Object.entries(backgrounds)) {
+    // Determine which background matches current path
+    let bgKey = '/';
+    for (const [path] of Object.entries(backgrounds)) {
       if (path === '/' && location.pathname === '/') {
-        bgImage = image;
+        bgKey = path;
         break;
       } else if (path !== '/' && location.pathname.startsWith(path)) {
-        bgImage = image;
+        bgKey = path;
         break;
       }
     }
 
-    if (bgImage !== currentBg) {
-      setIsTransitioning(true);
-      // Wait for fade out, then switch image, then fade in
-      setTimeout(() => {
-        setCurrentBg(bgImage);
-        setTimeout(() => {
-          setIsTransitioning(false);
-        }, 50);
-      }, 300);
-    }
-  }, [location.pathname, currentBg]);
+    const newBg = backgrounds[bgKey];
+    if (bgKey === prevPathRef.current) return; // already showing correct bg
+
+    prevPathRef.current = bgKey;
+
+    // Fade out → switch → fade in
+    setIsVisible(false);
+    setTimeout(() => {
+      setBgImage(newBg);
+      setIsVisible(true);
+    }, 250);
+  }, [location.pathname]);
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-0 pointer-events-none"
       style={{
-        background: `url('${currentBg}') center center / cover no-repeat fixed`,
-        transition: 'opacity 0.3s ease-in-out',
-        opacity: isTransitioning ? 0 : 1,
+        background: `url('${bgImage}') center center / cover no-repeat fixed`,
+        transition: 'opacity 0.25s ease-in-out',
+        opacity: isVisible ? 1 : 0,
       }}
     >
       <div className="absolute inset-0 bg-black/30"></div>

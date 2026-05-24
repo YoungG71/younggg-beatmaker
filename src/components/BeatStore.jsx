@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShoppingCart, Music, CreditCard } from 'lucide-react';
+import AudioPlayer from './AudioPlayer';
 
 const beatIds = [
   "126", "136", "192", "193", "207", "209", 
@@ -13,7 +14,6 @@ const BeatStore = () => {
     const checkoutSection = document.getElementById('checkout');
     if (checkoutSection) {
       checkoutSection.scrollIntoView({ behavior: 'smooth' });
-      // Optional: Pre-fill the input if we wanted to get fancy, but standard html input focus is enough
       const input = document.querySelector('input[name="os0"]');
       if (input) {
         input.value = `Beat #${beatId} - `;
@@ -61,14 +61,11 @@ const BeatStore = () => {
                 <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_5px_#22c55e] animate-pulse"></div>
               </div>
               
-              <div className="w-full bg-zinc-900 rounded-full p-1 border border-gray-800">
-                <audio 
-                  controls 
-                  controlsList="nodownload" 
-                  src={`/beats/Instruwest${id}.mp3`} 
-                  className="w-full h-8"
-                  style={{ filter: 'sepia(20%) saturate(150%)' }} // Subtle styling to player
-                ></audio>
+              <div className="w-full">
+                <AudioPlayer
+                  src={`/beats/Instruwest${id}.mp3`}
+                  beatId={id}
+                />
               </div>
 
               <button

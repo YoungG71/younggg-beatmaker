@@ -10,8 +10,8 @@ const TheStash = () => {
           BUY NOW
         </h2>
 
-        <div style={{ marginBottom: '40px', textAlign: 'center' }}> 
-            <span style={{ color: '#FFD700', border: '2px solid #FFD700', padding: '10px 20px', fontWeight: '900', letterSpacing: '2px', textTransform: 'uppercase', display: 'inline-block' }}> 
+        <div className="mb-10 text-center"> 
+            <span className="text-west-gold border-2 border-west-gold px-5 py-2.5 font-black tracking-wider uppercase inline-block"> 
                 📦 SHIPPING INCLUDED / LIVRAISON INCLUSE 
             </span> 
         </div> 
@@ -92,11 +92,11 @@ const TheStash = () => {
                     <p className="text-4xl text-west-gold font-bold mb-6 drop-shadow-md gold-shimmer-text">{item.price} €</p>
                   </div>
 
-                  <div className="payment-buttons" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '15px' }}>
+                  <div className="flex flex-col gap-2.5 mt-4">
                     
                     {/* Option 1: PayPal */}
-                    <div className="paypal-wrapper" style={{ width: '100%' }}>
-                      <p style={{ color: '#aaa', fontSize: '0.7rem', marginBottom: '5px', textTransform: 'uppercase' }}>Option 1:</p>
+                    <div className="w-full">
+                      <p className="text-gray-400 text-xs mb-1 uppercase">Option 1:</p>
                       
                       <form 
                         action="https://www.paypal.com/cgi-bin/webscr" 
@@ -147,33 +147,33 @@ const TheStash = () => {
                       </form>
                     </div>
 
-                    <div style={{ height: '1px', background: '#333', margin: '5px 0' }}></div>
+                    <div className="h-px bg-zinc-800 my-1"></div>
 
                     {/* Option 2: Stripe */}
-                    <div className="stripe-wrapper" style={{ width: '100%' }}>
-                      <p style={{ color: '#aaa', fontSize: '0.7rem', marginBottom: '5px', textTransform: 'uppercase' }}>Option 2:</p>
+                    <div className="w-full">
+                      <p className="text-gray-400 text-xs mb-1 uppercase">Option 2:</p>
                       
-                      {item.id === 204 && !item.isRestocking && ( // Ajout de !item.isRestocking pour s'assurer que ce n'est plus une précommande
-                        <a href="https://buy.stripe.com/dRm00k9Q61aJ88Y23s73G04" // ATTENTION: Vérifiez et mettez à jour cette URL Stripe si elle était spécifique à la précommande
-                           style={{ display: 'block', width: '100%', padding: '16px', background: '#000', border: '1px solid #FFD700', color: '#FFD700', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '900', borderRadius: '4px', textAlign: 'center', transition: '0.3s' }}>
+                      {item.id === 204 && !item.isRestocking && (
+                        <a href="https://buy.stripe.com/dRm00k9Q61aJ88Y23s73G04" 
+                           className="block w-full p-4 bg-black border border-west-gold text-west-gold no-underline text-sm font-black rounded text-center transition-all duration-300 hover:bg-west-gold hover:text-black">
                            💳 CARD (STRIPE)
                         </a>
                       )}
                       {item.id === 201 && (
                         <a href="https://buy.stripe.com/14A14o1jA6v3bladMa73G01" 
-                           style={{ display: 'block', width: '100%', padding: '16px', background: '#000', border: '1px solid #FFD700', color: '#FFD700', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '900', borderRadius: '4px', textAlign: 'center', transition: '0.3s' }}>
+                           className="block w-full p-4 bg-black border border-west-gold text-west-gold no-underline text-sm font-black rounded text-center transition-all duration-300 hover:bg-west-gold hover:text-black">
                            💳 CARD (STRIPE)
                         </a>
                       )}
                       {item.id === 202 && (
                         <a href="https://buy.stripe.com/5kQ4gAbYe4mVgFueQe73G02" 
-                           style={{ display: 'block', width: '100%', padding: '16px', background: '#000', border: '1px solid #FFD700', color: '#FFD700', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '900', borderRadius: '4px', textAlign: 'center', transition: '0.3s' }}>
+                           className="block w-full p-4 bg-black border border-west-gold text-west-gold no-underline text-sm font-black rounded text-center transition-all duration-300 hover:bg-west-gold hover:text-black">
                            💳 CARD (STRIPE)
                         </a>
                       )}
                       {item.id === 203 && (
                         <a href="https://buy.stripe.com/cNifZid2i6v3ah64bA73G03" 
-                           style={{ display: 'block', width: '100%', padding: '16px', background: '#000', border: '1px solid #FFD700', color: '#FFD700', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '900', borderRadius: '4px', textAlign: 'center', transition: '0.3s' }}>
+                           className="block w-full p-4 bg-black border border-west-gold text-west-gold no-underline text-sm font-black rounded text-center transition-all duration-300 hover:bg-west-gold hover:text-black">
                            💳 CARD (STRIPE)
                         </a>
                       )}

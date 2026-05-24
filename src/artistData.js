@@ -19,7 +19,7 @@ export const artistData = {
       paypalId: "VHLQ8JJBMU7DW",
       dedicationName: "os0",
       isPack: false,
-      isRestocking: false, // Mis à jour à false
+      isRestocking: false,
       buttonText: "BUY NOW"
     },
     {

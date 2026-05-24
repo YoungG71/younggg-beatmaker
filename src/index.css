@@ -9,6 +9,18 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-street uppercase;
   }
+
+  /* Accessibility: visible focus indicators for keyboard navigation */
+  *:focus-visible {
+    outline: 2px solid #FFD700;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Remove focus outline for mouse users */
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 body {
@@ -19,16 +31,15 @@ body {
   position: relative;
 }
 
+/* Smooth scrolling for skip-to-content */
+html {
+  scroll-behavior: smooth;
+}
+
 .text-stroke-gold {
   -webkit-text-stroke: 1px #FFD700;
 }
 
-/* Stripe CD Button Hover Effect */
-.stripe-cd-btn:hover {
-    background: #FFD700 !important;
-    color: #000 !important;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-}
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
