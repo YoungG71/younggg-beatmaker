@@ -3,11 +3,13 @@ import { ShoppingCart, Music, CreditCard } from 'lucide-react';
 import AudioPlayer from './AudioPlayer';
 
 const beatIds = [
-  "126", "136", "192", "193", "207", "209", 
-  "240", "245", "261", "297", "302", "315", 
-  "330", "337", "359", "389", "407", "412", 
+  "126", "136", "192", "193", "207", "209",
+  "240", "245", "261", "297", "302", "315",
+  "330", "337", "359", "389", "407", "412",
   "418", "421", "422", "423", "429", "431"
 ];
+
+const soldBeats = ["315", "418"];
 
 const BeatStore = () => {
   const scrollToCheckout = (beatId) => {
@@ -49,17 +51,30 @@ const BeatStore = () => {
 
         {/* Beats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {beatIds.map((id) => (
-            <div
-              key={id}
-              className="bg-black border-2 border-gray-700 hover:border-west-gold rounded-lg p-6 shadow-lg transition-all duration-500 ease-out hover:shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:-translate-y-2 hover:scale-[1.02] group flex flex-col gap-4"
-            >
-              <div className="flex justify-between items-center border-b border-gray-800 pb-2 mb-2">
-                <h4 className="text-xl text-west-gold font-bold tracking-widest">
-                  EXCLUSIVE BEAT #{id}
-                </h4>
-                <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_5px_#22c55e] animate-pulse"></div>
-              </div>
+          {beatIds.map((id) => {
+            const isSold = soldBeats.includes(id);
+            return (
+              <div
+                key={id}
+                className={`bg-black border-2 rounded-lg p-6 shadow-lg transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] group flex flex-col gap-4 ${
+                  isSold
+                    ? 'border-red-600 hover:border-red-500 hover:shadow-[0_0_30px_rgba(220,38,38,0.4)]'
+                    : 'border-gray-700 hover:border-west-gold hover:shadow-[0_0_30px_rgba(255,215,0,0.4)]'
+                }`}
+              >
+                <div className="flex justify-between items-center border-b border-gray-800 pb-2 mb-2">
+                  <div className="flex items-center gap-2">
+                    <h4 className={`text-xl font-bold tracking-widest ${isSold ? 'text-red-500' : 'text-west-gold'}`}>
+                      EXCLUSIVE BEAT #{id}
+                    </h4>
+                    {isSold && (
+                      <span className="px-2 py-0.5 bg-red-600 text-white text-xs font-black rounded animate-pulse">
+                        SOLD
+                      </span>
+                    )}
+                  </div>
+                  <div className={`w-2 h-2 rounded-full ${isSold ? 'bg-red-500 shadow-[0_0_5px_#dc2626] animate-pulse' : 'bg-green-500 shadow-[0_0_5px_#22c55e] animate-pulse'}`}></div>
+                </div>
               
               <div className="w-full">
                 <AudioPlayer
@@ -70,13 +85,19 @@ const BeatStore = () => {
 
               <button
                 onClick={() => scrollToCheckout(id)}
-                className="w-full mt-2 bg-gradient-to-r from-gray-800 to-black hover:from-west-gold hover:to-yellow-500 text-white hover:text-black font-bold py-3 px-4 rounded border border-gray-600 hover:border-west-gold transition-all duration-300 flex items-center justify-center gap-2 uppercase tracking-wider shadow-md"
+                className={`w-full mt-2 font-bold py-3 px-4 rounded border transition-all duration-300 flex items-center justify-center gap-2 uppercase tracking-wider shadow-md ${
+                  isSold
+                    ? 'bg-gray-700 border-gray-600 text-gray-400 cursor-not-allowed hover:bg-gray-700'
+                    : 'bg-gradient-to-r from-gray-800 to-black hover:from-west-gold hover:to-yellow-500 text-white hover:text-black border-gray-600 hover:border-west-gold'
+                }`}
+                disabled={isSold}
               >
                 <ShoppingCart size={18} />
-                Select Beat #{id}
+                {isSold ? 'SOLD OUT' : `Select Beat #${id}`}
               </button>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Checkout Section */}
