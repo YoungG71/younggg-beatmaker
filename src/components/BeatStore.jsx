@@ -9,7 +9,7 @@ const beatIds = [
   "418", "421", "422", "423", "429", "431"
 ];
 
-const soldBeats = ["315", "418"];
+const soldBeats = ["315", "418", "431"];
 
 const BeatStore = () => {
   const scrollToCheckout = (beatId) => {
