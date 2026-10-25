@@ -1,7 +1,19 @@
 export const musicData = [
   {
+    id: "album-jean-luc-melanchon",
+    title: "Jean Luc Mélanchon",
+    year: "2026",
+    spotifyId: "575tE1qmgjKLEtxI18TCzl"
+  },
+  {
+    id: "album-breaking-the-mold",
+    title: "Breaking the Mold",
+    year: "2026",
+    spotifyId: "2qqt9PU9b96psV0N918re3"
+  },
+  {
     id: "album-2026",
-    title: "2026 Release",
+    title: "Street Dream",
     year: "2026",
     spotifyId: "4mYiia7bpv4QUB43fTepo5"
   },
