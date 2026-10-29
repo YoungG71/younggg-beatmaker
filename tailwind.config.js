@@ -15,8 +15,10 @@ export default {
         'west-orange': '#FF8C00',
       },
       fontFamily: {
-        'brand': ['"Bebas Neue"', '"Oswald"', 'sans-serif'],
-        'street': ['"Oswald"', 'sans-serif'],
+        'brand': ['"Montserrat"', 'sans-serif'],
+        'street': ['"Montserrat"', '"Oswald"', 'sans-serif'],
+        'montserrat': ['"Montserrat"', 'sans-serif'],
+        'bebas': ['"Bebas Neue"', 'sans-serif'],
         'syne': ['"Syne"', 'sans-serif'],
         'gothic': ['"UnifrakturMaguntia"', 'cursive'],
         'sans': ['"Inter"', 'sans-serif'],

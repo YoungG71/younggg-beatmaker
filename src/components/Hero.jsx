@@ -34,10 +34,10 @@ const Hero = () => {
 
         {/* Brand Title: ELECTRIC NEON SIGN EFFECT */}
         <div className="neon-glow-container mb-3">
-          <h1 className="neon-electric-title text-7xl sm:text-8xl md:text-9xl lg:text-[11rem] font-brand tracking-widest uppercase leading-none select-none relative">
+          <h1 className="neon-electric-title text-6xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-brand font-black tracking-widest uppercase leading-none select-none relative">
             {artistData.name}
             {/* Arc sweep overlay layer */}
-            <span className="neon-arc-layer text-7xl sm:text-8xl md:text-9xl lg:text-[11rem] font-brand tracking-widest uppercase leading-none" aria-hidden="true">
+            <span className="neon-arc-layer text-6xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-brand font-black tracking-widest uppercase leading-none" aria-hidden="true">
               {artistData.name}
             </span>
           </h1>
@@ -51,12 +51,12 @@ const Hero = () => {
         </div>
 
         {/* Tagline */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-street text-gray-100 tracking-widest mt-2 uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-brand font-bold text-gray-100 tracking-widest mt-2 uppercase text-shadow-md">
           {artistData.tagline}
         </h2>
 
         {/* Sub-description */}
-        <p className="max-w-2xl text-sm sm:text-base text-gray-300 font-sans tracking-wide mt-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+        <p className="max-w-2xl text-sm sm:text-base text-gray-300 font-sans tracking-wide mt-3 text-shadow-sm">
           Authentic California G-Funk & Heavy West Coast Instrumentals with <span className="text-west-gold font-bold">100% Exclusive Rights</span> at 80€ Flat Rate.
         </p>
 
