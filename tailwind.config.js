@@ -15,9 +15,11 @@ export default {
         'west-orange': '#FF8C00',
       },
       fontFamily: {
+        'brand': ['"Bebas Neue"', '"Oswald"', 'sans-serif'],
+        'street': ['"Oswald"', 'sans-serif'],
+        'syne': ['"Syne"', 'sans-serif'],
         'gothic': ['"UnifrakturMaguntia"', 'cursive'],
         'sans': ['"Inter"', 'sans-serif'],
-        'street': ['"Oswald"', 'sans-serif'],
       },
       backgroundImage: {
         'vinyl': "url('/vyniles.png')",

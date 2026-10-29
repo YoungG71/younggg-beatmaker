@@ -56,7 +56,12 @@ const Background = () => {
         opacity: isVisible ? 1 : 0,
       }}
     >
-      <div className="absolute inset-0 bg-black/30"></div>
+      {/* Subtle cinematic gradient: maintains rich colors while ensuring text readability */}
+      {location.pathname === '/' ? (
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/20 to-black/80"></div>
+      ) : (
+        <div className="absolute inset-0 bg-black/50"></div>
+      )}
     </div>
   );
 };

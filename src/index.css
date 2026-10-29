@@ -50,32 +50,98 @@ html {
   animation: blink 1.5s infinite;
 }
 
-@keyframes neon-flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+/* ===================================================================
+   SMOOTH ELECTRIC NEON SYSTEM — "YOUNG G" Hero Title
+   Refined, warm, non-strobing neon tube with gentle breathing & soft electric arc
+   =================================================================== */
+
+/* 1. Smooth Neon Breathing Glow — continuous and elegant, no violent flashing */
+@keyframes neon-breathe {
+  0%, 100% {
     text-shadow:
-      0 2px 4px rgba(0,0,0,0.95),
-      0 4px 12px rgba(0,0,0,0.85),
-      0 8px 24px rgba(0,0,0,0.7),
-      0 16px 48px rgba(0,0,0,0.5),
-      0 0 7px #FFD700,
-      0 0 10px #FFD700,
-      0 0 21px #FFD700,
-      0 0 42px #FFD700,
-      0 0 82px #FFD700;
-    opacity: 1;
+      0 0 3px #FFFFFF,
+      0 0 8px rgba(255, 255, 255, 0.8),
+      0 0 16px #FFD700,
+      0 0 32px #FFD700,
+      0 0 55px rgba(255, 180, 0, 0.5);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
   }
-  20%, 24%, 55% {
+  50% {
     text-shadow:
-      0 2px 4px rgba(0,0,0,0.95),
-      0 4px 12px rgba(0,0,0,0.85),
-      0 8px 24px rgba(0,0,0,0.7),
-      0 16px 48px rgba(0,0,0,0.5);
-    opacity: 0.6;
+      0 0 4px #FFFFFF,
+      0 0 12px rgba(255, 255, 255, 0.95),
+      0 0 24px #FFD700,
+      0 0 48px #FFD700,
+      0 0 75px rgba(255, 180, 0, 0.65);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.65));
   }
 }
 
+/* 2. Electric Arc Sweep — soft scanning sheen over the neon tube */
+@keyframes electric-arc-sweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Main neon title class — apply to the YOUNG G h1 */
+.neon-electric-title {
+  color: #FFFDF0;
+  -webkit-text-stroke: 1.5px rgba(255, 215, 0, 0.9);
+  animation: neon-breathe 3.5s ease-in-out infinite;
+  text-shadow:
+    0 0 3px #FFFFFF,
+    0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 16px #FFD700,
+    0 0 32px #FFD700,
+    0 0 55px rgba(255, 180, 0, 0.5);
+}
+
+/* Electric arc sweep overlay on the text */
+.neon-electric-title .neon-arc-layer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(255, 255, 255, 0.6) 49%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.6) 51%,
+    transparent 62%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: electric-arc-sweep 4s ease-in-out infinite;
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Ambient warm radial glow container */
+.neon-glow-container {
+  position: relative;
+  display: inline-block;
+}
+
+.neon-glow-container::before {
+  content: '';
+  position: absolute;
+  inset: -15px -25px;
+  background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: neon-breathe 3.5s ease-in-out infinite;
+}
+
+/* Legacy class kept for other sections */
 .animate-neon {
-  animation: neon-flicker 2.5s infinite alternate;
+  animation: neon-breathe 3.5s ease-in-out infinite;
 }
 
 /* === WEST COAST ANIMATIONS === */
@@ -93,3 +159,4 @@ html {
   background-size: 200% auto;
   animation: gold-shimmer 3s ease-in-out infinite;
 }
+
