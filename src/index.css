@@ -3,22 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
   body {
-    @apply text-white font-brand uppercase overflow-x-hidden tracking-wide antialiased;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    @apply text-white font-street uppercase overflow-x-hidden tracking-wide;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-brand uppercase antialiased;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    @apply font-street uppercase;
   }
 
   /* Accessibility: visible focus indicators for keyboard navigation */
@@ -32,20 +21,6 @@
   *:focus:not(:focus-visible) {
     outline: none;
   }
-}
-
-/* Vector text-shadow utilities — avoids GPU bitmap pixelation caused by CSS filter:drop-shadow */
-.text-shadow-sm {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
-}
-.text-shadow-md {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
-}
-.text-shadow-lg {
-  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.9);
-}
-.text-shadow-gold {
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 body {
@@ -177,8 +152,6 @@ html {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gold-shimmer 3s ease-in-out infinite;
-  display: inline-block;
-  -webkit-text-stroke: 0.3px rgba(255, 215, 0, 0.5);
 }
 
 .gold-shimmer-bg {

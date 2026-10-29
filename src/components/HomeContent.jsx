@@ -52,7 +52,7 @@ const HomeContent = () => {
               Exclusive Catalog
             </span>
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-brand tracking-wider text-white uppercase text-shadow-lg">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-brand tracking-wider text-white uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Latest <span className="gold-shimmer-text">Featured Beats</span>
           </h2>
           <p className="mt-3 text-gray-300 font-sans max-w-2xl mx-auto text-sm sm:text-base">
@@ -71,7 +71,7 @@ const HomeContent = () => {
                 <div className="flex justify-between items-center pb-3 border-b border-gray-800 mb-4">
                   <div className="flex items-center gap-2">
                     <Music className="w-5 h-5 text-west-gold" />
-                    <h3 className="font-brand font-black text-xl tracking-wide text-west-gold">
+                    <h3 className="font-brand text-2xl tracking-wider text-west-gold">
                       EXCLUSIVE BEAT #{id}
                     </h3>
                   </div>
@@ -94,7 +94,7 @@ const HomeContent = () => {
               <div className="pt-4 mt-4 border-t border-gray-800 flex items-center justify-between gap-3">
                 <div>
                   <span className="block text-xs font-sans text-gray-400 uppercase tracking-wider">Exclusive Price</span>
-                  <span className="text-2xl font-brand font-black text-white tracking-wide">€80.00</span>
+                  <span className="text-2xl font-brand text-white tracking-wider">€80.00</span>
                 </div>
                 <button
                   onClick={() => {
@@ -108,7 +108,7 @@ const HomeContent = () => {
                       }
                     }, 150);
                   }}
-                  className="flex items-center gap-2 px-5 py-2.5 bg-west-gold hover:bg-[#FFE259] text-black font-brand font-black text-base tracking-wider rounded-lg shadow-[0_0_15px_rgba(255,215,0,0.4)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+                  className="flex items-center gap-2 px-5 py-2.5 bg-west-gold hover:bg-[#FFE259] text-black font-brand text-lg tracking-wider rounded-lg shadow-[0_0_15px_rgba(255,215,0,0.4)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
                 >
                   <ShoppingCart className="w-4 h-4" />
                   <span>BUY NOW</span>
@@ -287,7 +287,7 @@ const HomeContent = () => {
               Music Videos & Collaborations
             </span>
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-brand tracking-wider text-white uppercase text-shadow-lg">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-brand tracking-wider text-white uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Video <span className="gold-shimmer-text">Productions</span>
           </h2>
           <p className="mt-3 text-gray-300 font-sans max-w-2xl text-sm sm:text-base">
