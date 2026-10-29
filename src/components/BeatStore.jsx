@@ -25,7 +25,7 @@ const BeatStore = () => {
   };
 
   return (
-    <section id="beat-store" className="py-20 px-4 border-t-4 border-west-gold relative overflow-hidden">
+    <section id="beat-store" className="pt-32 sm:pt-36 pb-20 px-4 min-h-screen relative overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto">
         
         {/* Header Section */}
