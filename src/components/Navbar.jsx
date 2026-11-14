@@ -1,23 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Home, Disc, Music, ShoppingBag, Mail, Menu, X, Sparkles } from 'lucide-react';
+import { Home, Disc, Music, ShoppingBag, Mail, Menu, X, Globe } from 'lucide-react';
 import { artistData } from '../artistData';
-
-const NAV_ITEMS = [
-  { path: '/', label: 'HOME', icon: Home },
-  { path: '/music', label: 'MUSIC', icon: Disc },
-  { path: '/beat-store', label: 'BEAT STORE', icon: Music, badge: '80€' },
-  { path: '/shop', label: 'SHOP', icon: ShoppingBag },
-  { path: '/contact', label: 'CONTACT', icon: Mail },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { lang, toggleLang, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const upTheLevelCD = artistData.shop.find(item => item.id === 204);
+
+  const navItems = [
+    { path: '/', label: t.nav.home, icon: Home },
+    { path: '/music', label: t.nav.music, icon: Disc },
+    { path: '/beat-store', label: t.nav.beatStore, icon: Music, badge: '80€' },
+    { path: '/shop', label: t.nav.shop, icon: ShoppingBag },
+    { path: '/contact', label: t.nav.contact, icon: Mail },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +66,7 @@ const Navbar = () => {
         {/* DESKTOP NAVIGATION DOCK (Floating Segmented Capsule) */}
         {/* ============================================================ */}
         <div className="hidden md:flex items-center p-1 rounded-full bg-black/60 border border-west-gold/30 backdrop-blur-xl shadow-inner gap-1">
-          {NAV_ITEMS.map((item) => {
+          {navItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.path);
             return (
@@ -96,9 +98,22 @@ const Navbar = () => {
         </div>
 
         {/* ============================================================ */}
-        {/* RIGHT SIDE: ALBUM TEASER & MOBILE MENU TOGGLE */}
+        {/* RIGHT SIDE: ALBUM TEASER, LANGUAGE TOGGLE & MOBILE TOGGLE */}
         {/* ============================================================ */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          {/* Language Switcher Capsule */}
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-west-gold/50 bg-black/80 hover:border-west-gold hover:shadow-[0_0_15px_rgba(255,215,0,0.3)] transition-all duration-300 font-brand text-xs sm:text-sm tracking-widest cursor-pointer select-none"
+            title={lang === 'fr' ? 'Switch to English' : 'Passer en français'}
+            aria-label="Toggle language"
+          >
+            <Globe className="w-3.5 h-3.5 text-west-gold" />
+            <span className={lang === 'fr' ? 'text-west-gold font-bold underline' : 'text-gray-400'}>FR</span>
+            <span className="text-zinc-600">|</span>
+            <span className={lang === 'en' ? 'text-west-gold font-bold underline' : 'text-gray-400'}>EN</span>
+          </button>
+
           {upTheLevelCD && (
             <div
               onClick={() => handleNavClick('/shop')}
@@ -114,10 +129,10 @@ const Navbar = () => {
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-[9px] font-sans font-bold text-gray-400 uppercase tracking-widest leading-none">
-                  New CD
+                  {t.nav.newCd}
                 </span>
                 <span className="text-west-gold text-xs font-brand tracking-wider uppercase leading-tight group-hover:text-white transition-colors">
-                  Available Now!
+                  {t.nav.availableNow}
                 </span>
               </div>
             </div>
@@ -140,7 +155,7 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden max-w-7xl mx-auto mt-3 bg-black/95 backdrop-blur-2xl border-2 border-west-gold/50 rounded-3xl p-5 shadow-[0_15px_40px_rgba(0,0,0,0.95)] animate-in fade-in slide-in-from-top-3 duration-200">
           <div className="flex flex-col gap-2">
-            {NAV_ITEMS.map((item) => {
+            {navItems.map((item) => {
               const Icon = item.icon;
               const active = isActive(item.path);
               return (
@@ -172,6 +187,22 @@ const Navbar = () => {
               );
             })}
 
+            {/* Mobile Language Switcher */}
+            <div className="pt-3 mt-2 border-t border-zinc-800 flex items-center justify-between px-2">
+              <span className="text-xs font-sans text-gray-400 uppercase tracking-wider">
+                Language / Langue:
+              </span>
+              <button
+                onClick={toggleLang}
+                className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-west-gold/60 bg-black text-west-gold font-brand text-sm tracking-widest cursor-pointer"
+              >
+                <Globe className="w-4 h-4 text-west-gold" />
+                <span className={lang === 'fr' ? 'font-bold underline' : 'text-gray-400'}>FR</span>
+                <span className="text-zinc-600">|</span>
+                <span className={lang === 'en' ? 'font-bold underline' : 'text-gray-400'}>EN</span>
+              </button>
+            </div>
+
             {upTheLevelCD && (
               <div
                 onClick={() => handleNavClick('/shop')}
@@ -188,7 +219,7 @@ const Navbar = () => {
                       Official CD Release
                     </span>
                     <span className="font-brand text-base text-west-gold tracking-wider">
-                      {upTheLevelCD.name} — Available Now
+                      {upTheLevelCD.name} — {t.nav.availableNow}
                     </span>
                   </div>
                 </div>

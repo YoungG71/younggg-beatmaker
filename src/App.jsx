@@ -1,5 +1,6 @@
 import React, { useRef, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Background from './components/Background';
@@ -99,21 +100,23 @@ function AppLayout({ children }) {
 
 function App() {
   return (
-    <BrowserRouter>
-      <AppLayout>
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/music" element={<Discography />} />
-            <Route path="/beat-store" element={<BeatStore />} />
-            <Route path="/shop" element={<TheStash />} />
-            <Route path="/order-success" element={<OrderSuccess />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
-      </AppLayout>
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <AppLayout>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/music" element={<Discography />} />
+              <Route path="/beat-store" element={<BeatStore />} />
+              <Route path="/shop" element={<TheStash />} />
+              <Route path="/order-success" element={<OrderSuccess />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </Suspense>
+        </AppLayout>
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
 

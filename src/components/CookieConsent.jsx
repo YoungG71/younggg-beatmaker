@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Cookie, X, Check } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const COOKIE_CONSENT_KEY = 'youngg-cookie-consent';
 
 const CookieConsent = () => {
+  const { lang } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
 
@@ -51,7 +53,9 @@ const CookieConsent = () => {
             <Cookie className="w-6 h-6 text-west-gold flex-shrink-0" />
           </div>
           <p className="text-gray-300 text-sm flex-1 text-center md:text-left">
-            This site uses cookies to improve your experience and analyze traffic.{' '}
+            {lang === 'fr' 
+              ? 'Ce site utilise des cookies pour assurer une expérience fluide et mesurer l’audience.'
+              : 'This site uses cookies to improve your experience and analyze traffic.'}{' '}
             <span className="text-gray-500">(Google Analytics)</span>
           </p>
 
@@ -59,17 +63,17 @@ const CookieConsent = () => {
           <div className="flex gap-3 flex-shrink-0">
             <button
               onClick={decline}
-              className="px-5 py-2.5 border border-zinc-600 text-gray-300 rounded text-sm font-bold uppercase tracking-wider hover:border-zinc-400 transition-colors"
+              className="px-5 py-2.5 border border-zinc-600 text-gray-300 rounded text-sm font-bold uppercase tracking-wider hover:border-zinc-400 transition-colors cursor-pointer"
             >
               <X className="w-4 h-4 inline mr-1" />
-              Decline
+              {lang === 'fr' ? 'Refuser' : 'Decline'}
             </button>
             <button
               onClick={acceptAll}
-              className="px-5 py-2.5 bg-west-gold text-black rounded text-sm font-bold uppercase tracking-wider hover:bg-white transition-all shadow-[0_0_10px_rgba(255,215,0,0.3)]"
+              className="px-5 py-2.5 bg-west-gold text-black rounded text-sm font-bold uppercase tracking-wider hover:bg-white transition-all shadow-[0_0_10px_rgba(255,215,0,0.3)] cursor-pointer"
             >
               <Check className="w-4 h-4 inline mr-1" />
-              Accept All
+              {lang === 'fr' ? 'Accepter' : 'Accept All'}
             </button>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Music, Disc, Sparkles, Flame, Shield, ArrowRight, ExternalLink, Play, ShoppingCart, Award } from 'lucide-react';
 import { artistData } from '../artistData';
+import { useLanguage } from '../context/LanguageContext';
 import AudioPlayer from './AudioPlayer';
 import LazyEmbed from './LazyEmbed';
 
@@ -35,6 +36,7 @@ const soundBadges = [
 
 const HomeContent = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const triplePack = artistData.shop.find(item => item.id === 207);
   const upTheLevelCD = artistData.shop.find(item => item.id === 204);
   const doublePack = artistData.shop.find(item => item.id === 203);
@@ -50,14 +52,14 @@ const HomeContent = () => {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/70 border border-west-gold/40 mb-3 backdrop-blur-md">
             <Flame className="w-4 h-4 text-west-orange" />
             <span className="text-west-gold text-xs font-sans font-bold tracking-widest uppercase">
-              Exclusive Catalog
+              {t.home.exclusiveCatalog}
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-brand tracking-wider text-white uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-            Latest <span className="gold-shimmer-text">Featured Beats</span>
+            {t.home.latestBeats} <span className="gold-shimmer-text">{t.home.featuredBeatsSpan}</span>
           </h2>
           <p className="mt-3 text-gray-300 font-sans max-w-2xl mx-auto text-sm sm:text-base">
-            Listen to an instant preview. Each beat is sold at <span className="text-west-gold font-bold">80€ with 100% Exclusive Rights</span>. Once purchased, it is permanently removed from the store.
+            {t.home.featuredBeatsDesc}
           </p>
         </div>
 
@@ -73,11 +75,11 @@ const HomeContent = () => {
                   <div className="flex items-center gap-2">
                     <Music className="w-5 h-5 text-west-gold" />
                     <h3 className="font-brand text-2xl tracking-wider text-west-gold">
-                      EXCLUSIVE BEAT #{id}
+                      {t.home.exclusiveBeatNum}{id}
                     </h3>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-sans text-green-400 font-semibold uppercase tracking-wider">Available</span>
+                    <span className="text-xs font-sans text-green-400 font-semibold uppercase tracking-wider">{t.home.available}</span>
                     <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e] animate-pulse" />
                   </div>
                 </div>
@@ -94,7 +96,7 @@ const HomeContent = () => {
               {/* Card Footer: Price & CTA */}
               <div className="pt-4 mt-4 border-t border-gray-800 flex items-center justify-between gap-3">
                 <div>
-                  <span className="block text-xs font-sans text-gray-400 uppercase tracking-wider">Exclusive Price</span>
+                  <span className="block text-xs font-sans text-gray-400 uppercase tracking-wider">{t.home.exclusivePrice}</span>
                   <span className="text-2xl font-brand text-white tracking-wider">€80.00</span>
                 </div>
                 <button
@@ -112,7 +114,7 @@ const HomeContent = () => {
                   className="flex items-center gap-2 px-5 py-2.5 bg-west-gold hover:bg-[#FFE259] text-black font-brand text-lg tracking-wider rounded-lg shadow-[0_0_15px_rgba(255,215,0,0.4)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
                 >
                   <ShoppingCart className="w-4 h-4" />
-                  <span>BUY NOW</span>
+                  <span>{t.home.buyNow}</span>
                 </button>
               </div>
             </div>
@@ -125,7 +127,7 @@ const HomeContent = () => {
             onClick={() => { navigate('/beat-store'); window.scrollTo(0, 0); }}
             className="inline-flex items-center gap-3 px-8 py-3.5 rounded-xl bg-black/60 hover:bg-black/90 text-west-gold border border-west-gold/70 hover:border-west-gold font-brand text-xl tracking-wider backdrop-blur-md shadow-lg hover:shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:scale-105 transition-all duration-200 cursor-pointer"
           >
-            <span>BROWSE 20+ MORE EXCLUSIVE BEATS</span>
+            <span>{t.home.browseMoreBeats}</span>
             <ArrowRight className="w-5 h-5 text-west-gold" />
           </button>
         </div>
@@ -142,37 +144,37 @@ const HomeContent = () => {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-west-gold/10 border border-west-gold/30 w-fit">
               <Award className="w-4 h-4 text-west-gold" />
               <span className="text-west-gold text-xs font-sans font-bold tracking-widest uppercase">
-                Producer & Beatmaker
+                {t.home.producerBadge}
               </span>
             </div>
 
             <h3 className="text-4xl sm:text-5xl font-brand tracking-wider text-white uppercase leading-tight">
-              The Authentic <span className="gold-shimmer-text">G-Funk & West Coast</span> Spirit
+              {t.home.authenticTitle} <span className="gold-shimmer-text">{t.home.authenticSpan}</span> {t.home.authenticSpirit}
             </h3>
 
             {/* Key Statistics Grid */}
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 rounded-xl bg-black/60 border border-west-gold/30">
-                <span className="block font-brand text-3xl sm:text-4xl text-west-gold tracking-wide">14+ YEARS</span>
-                <span className="text-xs font-sans text-gray-300 uppercase tracking-wider">Since 2010</span>
+                <span className="block font-brand text-3xl sm:text-4xl text-west-gold tracking-wide">{t.home.statYears}</span>
+                <span className="text-xs font-sans text-gray-300 uppercase tracking-wider">{t.home.statYearsSub}</span>
               </div>
               <div className="p-4 rounded-xl bg-black/60 border border-west-gold/30">
-                <span className="block font-brand text-3xl sm:text-4xl text-west-gold tracking-wide">100%</span>
-                <span className="text-xs font-sans text-gray-300 uppercase tracking-wider">Exclusive Rights</span>
+                <span className="block font-brand text-3xl sm:text-4xl text-west-gold tracking-wide">{t.home.statExclusive}</span>
+                <span className="text-xs font-sans text-gray-300 uppercase tracking-wider">{t.home.statExclusiveSub}</span>
               </div>
               <div className="p-4 rounded-xl bg-black/60 border border-west-gold/30">
-                <span className="block font-brand text-3xl sm:text-4xl text-west-gold tracking-wide">80 €</span>
-                <span className="text-xs font-sans text-gray-300 uppercase tracking-wider">Flat Rate</span>
+                <span className="block font-brand text-3xl sm:text-4xl text-west-gold tracking-wide">{t.home.statFlatRate}</span>
+                <span className="text-xs font-sans text-gray-300 uppercase tracking-wider">{t.home.statFlatRateSub}</span>
               </div>
               <div className="p-4 rounded-xl bg-black/60 border border-west-gold/30">
-                <span className="block font-brand text-3xl sm:text-4xl text-west-gold tracking-wide">US / INT.</span>
-                <span className="text-xs font-sans text-gray-300 uppercase tracking-wider">Worldwide Collabs</span>
+                <span className="block font-brand text-3xl sm:text-4xl text-west-gold tracking-wide">{t.home.statCollabs}</span>
+                <span className="text-xs font-sans text-gray-300 uppercase tracking-wider">{t.home.statCollabsSub}</span>
               </div>
             </div>
 
             {/* Sound Signature Badges */}
             <div>
-              <span className="block text-xs font-sans text-gray-400 uppercase tracking-wider mb-2">Sound Signature:</span>
+              <span className="block text-xs font-sans text-gray-400 uppercase tracking-wider mb-2">{t.home.soundSignature}</span>
               <div className="flex flex-wrap gap-2">
                 {soundBadges.map((badge, idx) => (
                   <span
@@ -190,25 +192,25 @@ const HomeContent = () => {
           <div className="lg:col-span-7 flex flex-col justify-between h-full bg-black/40 border border-gray-800 rounded-2xl p-6 sm:p-8">
             <div>
               <h4 className="text-2xl font-brand text-west-gold tracking-widest uppercase mb-4">
-                About Young G
+                {t.home.aboutYoungG}
               </h4>
               <p className="text-gray-200 font-sans text-base sm:text-lg leading-relaxed mb-6">
-                {artistData.bio}
+                {t.home.bioText}
               </p>
               <p className="text-gray-300 font-sans text-sm sm:text-base leading-relaxed border-l-2 border-west-gold pl-4 italic">
-                "From soaring synthesizer melodies to heavy basslines inspired by the golden era of Compton and Long Beach, every production is calibrated to give your voice instant power and presence."
+                {t.home.quote}
               </p>
             </div>
 
             <div className="mt-8 pt-6 border-t border-gray-800 flex flex-wrap items-center justify-between gap-4">
               <span className="text-xs font-sans text-gray-400 tracking-wider uppercase">
-                Available for custom projects & features
+                {t.home.availableCustom}
               </span>
               <button
                 onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
                 className="px-6 py-2.5 bg-west-gold text-black font-brand text-lg tracking-wider rounded-lg hover:bg-white transition-colors duration-200 cursor-pointer"
               >
-                CONTACT ME
+                {t.home.contactMe}
               </button>
             </div>
           </div>
@@ -222,7 +224,7 @@ const HomeContent = () => {
       {triplePack ? (
         <section className="bg-gradient-to-r from-red-950/80 via-black to-red-950/80 border-2 border-red-500/70 rounded-3xl p-8 sm:p-12 shadow-[0_0_40px_rgba(220,38,38,0.3)] relative overflow-hidden">
           <div className="absolute top-0 right-0 bg-gradient-to-r from-red-600 to-amber-500 text-black font-black text-xs sm:text-sm px-6 py-2 rounded-bl-xl shadow-lg uppercase tracking-widest animate-pulse">
-            🔥 BLACK FRIDAY DEAL (-42%)
+            {t.home.blackFridayBadge}
           </div>
 
           <div className="flex flex-col lg:flex-row items-center gap-10 justify-between mt-4 sm:mt-0">
@@ -271,7 +273,7 @@ const HomeContent = () => {
 
               <div className="py-1 px-4 rounded-full bg-black/80 border border-west-gold/40 text-center">
                 <span className="text-xs text-west-gold font-sans font-bold tracking-widest uppercase">
-                  💿 3 OFFICIAL PHYSICAL CDs INCLUDED
+                  {t.home.officialCdsIncluded}
                 </span>
               </div>
             </div>
@@ -279,13 +281,13 @@ const HomeContent = () => {
             {/* Pack Info */}
             <div className="flex-grow text-center lg:text-left">
               <div className="inline-block text-xs font-sans text-red-400 font-bold uppercase tracking-widest bg-red-950/60 border border-red-500/40 px-3 py-1 rounded-full mb-2">
-                Special Event • The Complete Trilogy
+                {t.home.specialEventTrilogy}
               </div>
               <h3 className="text-3xl sm:text-5xl font-brand text-white tracking-wider uppercase mt-1 mb-2">
-                TRIPLE DISC PACK (3 CDs)
+                {t.home.trilogyPackTitle}
               </h3>
               <p className="text-gray-300 font-sans text-sm sm:text-base max-w-xl mb-4">
-                Get all 3 official physical CDs: <strong className="text-white">Up The Level</strong> + <strong className="text-white">International West Coast Shit Vol. 1 & Vol. 2</strong>. Signed dedication available upon request.
+                {t.home.trilogyDesc}
               </p>
               
               <div className="flex flex-wrap items-baseline justify-center lg:justify-start gap-4 mb-2">
@@ -298,7 +300,7 @@ const HomeContent = () => {
                   </span>
                 )}
                 <span className="text-xs font-sans text-green-400 font-bold uppercase tracking-widest border border-green-500/50 bg-green-950/50 px-3 py-1 rounded-full">
-                  📦 Shipping Included
+                  {t.home.shippingIncluded}
                 </span>
               </div>
             </div>
@@ -309,13 +311,13 @@ const HomeContent = () => {
                 onClick={() => { navigate('/shop'); window.scrollTo(0, 0); }}
                 className="px-8 py-4 bg-gradient-to-r from-red-600 via-amber-500 to-west-gold text-black font-brand text-xl tracking-wider rounded-xl shadow-[0_0_25px_rgba(220,38,38,0.5)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer font-black"
               >
-                ORDER TRIPLE PACK (34,99 €)
+                {t.home.orderTriplePackBtn}
               </button>
               <button
                 onClick={() => { navigate('/shop'); window.scrollTo(0, 0); }}
                 className="px-8 py-3.5 bg-black/60 text-white border border-gray-700 hover:border-west-gold font-brand text-lg tracking-wider rounded-xl transition-all duration-200 cursor-pointer text-center"
               >
-                VIEW ALL SHOP & CD ITEMS
+                {t.home.viewAllShopBtn}
               </button>
             </div>
 
@@ -341,20 +343,20 @@ const HomeContent = () => {
             {/* Album Info */}
             <div className="flex-grow text-center md:text-left">
               <span className="text-xs font-sans text-west-gold font-bold uppercase tracking-widest">
-                New Release Available Now
+                {t.home.newReleaseAvailable}
               </span>
               <h3 className="text-4xl sm:text-5xl font-brand text-white tracking-wider uppercase mt-1 mb-2">
                 {upTheLevelCD.name}
               </h3>
               <p className="text-gray-300 font-sans text-sm sm:text-base max-w-xl mb-4">
-                {upTheLevelCD.description} Official Young G physical CD, signed dedication available upon request.
+                {upTheLevelCD.description}
               </p>
               <div className="flex items-center justify-center md:justify-start gap-4">
                 <span className="text-3xl font-brand text-west-gold tracking-wider">
                   {upTheLevelCD.price} €
                 </span>
                 <span className="text-xs text-gray-400 font-sans uppercase tracking-wider">
-                  Worldwide Shipping
+                  {t.home.worldwideShipping}
                 </span>
               </div>
             </div>
@@ -365,13 +367,13 @@ const HomeContent = () => {
                 onClick={() => { navigate('/shop'); window.scrollTo(0, 0); }}
                 className="px-8 py-3.5 bg-west-gold text-black font-brand text-xl tracking-wider rounded-xl shadow-[0_0_20px_rgba(255,215,0,0.5)] hover:scale-105 transition-all duration-200 cursor-pointer"
               >
-                ORDER MY COPY
+                {t.home.orderMyCopy}
               </button>
               <button
                 onClick={() => { navigate('/shop'); window.scrollTo(0, 0); }}
                 className="px-8 py-3.5 bg-black/60 text-white border border-gray-700 hover:border-west-gold font-brand text-xl tracking-wider rounded-xl transition-all duration-200 cursor-pointer"
               >
-                VIEW ALL SHOP & PACKS
+                {t.home.viewAllPacks}
               </button>
             </div>
 
@@ -387,14 +389,14 @@ const HomeContent = () => {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/70 border border-west-gold/40 mb-3 backdrop-blur-md">
             <Disc className="w-4 h-4 text-west-gold" />
             <span className="text-west-gold text-xs font-sans font-bold tracking-widest uppercase">
-              Music Videos & Collaborations
+              {t.home.videoBadge}
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-brand tracking-wider text-white uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-            Video <span className="gold-shimmer-text">Productions</span>
+            {t.home.videoTitle} <span className="gold-shimmer-text">{t.home.videoSpan}</span>
           </h2>
           <p className="mt-3 text-gray-300 font-sans max-w-2xl text-sm sm:text-base">
-            Discover a selection of official music videos and tracks recorded over Young G productions.
+            {t.home.videoDesc}
           </p>
         </div>
 

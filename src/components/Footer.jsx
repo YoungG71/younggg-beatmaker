@@ -1,6 +1,7 @@
 import React from 'react';
 import { artistData } from '../artistData';
 import { Instagram, Facebook, Youtube, Music2 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 // Custom TikTok icon component since Lucide might not have it or for style consistency
 const TikTok = ({ className }) => (
@@ -21,6 +22,7 @@ const TikTok = ({ className }) => (
 );
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="bg-black border-t-4 border-west-gold py-12 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
@@ -28,7 +30,7 @@ const Footer = () => {
         {/* Left Side: Brand */}
         <div className="text-center md:text-left">
           <h2 className="text-4xl text-west-gold font-gothic mb-2">{artistData.name}</h2>
-          <p className="text-gray-500 text-sm">© {new Date().getFullYear()} All Rights Reserved.</p>
+          <p className="text-gray-500 text-sm">© {new Date().getFullYear()} {t.footer.rights}</p>
         </div>
 
         {/* Center: Socials */}

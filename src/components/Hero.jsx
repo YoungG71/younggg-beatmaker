@@ -2,9 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Music, Disc3, ShieldCheck, Flame, ChevronDown, Sparkles } from 'lucide-react';
 import { artistData } from '../artistData';
+import { useLanguage } from '../context/LanguageContext';
 
 const Hero = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const scrollToContent = () => {
     const el = document.getElementById('featured-beats-section');
@@ -27,7 +29,7 @@ const Hero = () => {
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 border border-west-gold/50 backdrop-blur-md shadow-[0_0_15px_rgba(255,215,0,0.2)] mb-6 animate-pulse">
           <Sparkles className="w-4 h-4 text-west-gold" />
           <span className="text-west-gold text-xs sm:text-sm font-sans font-semibold tracking-widest uppercase">
-            Official West Coast Producer • Since 2010
+            {t.hero.badge}
           </span>
           <Flame className="w-4 h-4 text-west-orange" />
         </div>
@@ -52,12 +54,12 @@ const Hero = () => {
 
         {/* Tagline */}
         <h2 className="text-xl sm:text-2xl md:text-3xl font-street text-gray-100 tracking-widest mt-2 uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-          {artistData.tagline}
+          {t.hero.tagline}
         </h2>
 
         {/* Sub-description */}
         <p className="max-w-2xl text-sm sm:text-base text-gray-300 font-sans tracking-wide mt-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
-          Authentic California G-Funk & Heavy West Coast Instrumentals with <span className="text-west-gold font-bold">100% Exclusive Rights</span> at 80€ Flat Rate.
+          {t.hero.subdesc} <span className="text-west-gold font-bold">{t.hero.exclusiveRightsBadge}</span> {t.hero.flatRateSuffix}
         </p>
 
         {/* CTA Buttons */}
@@ -67,7 +69,7 @@ const Hero = () => {
             className="w-full sm:w-auto flex-1 flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#FFE259] via-west-gold to-[#FFA751] text-black font-brand text-2xl tracking-wider rounded-xl shadow-[0_0_25px_rgba(255,215,0,0.5)] hover:shadow-[0_0_40px_rgba(255,215,0,0.8)] hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer"
           >
             <Music className="w-6 h-6 text-black group-hover:rotate-12 transition-transform duration-300" />
-            <span>BEAT STORE (80€)</span>
+            <span>{t.hero.beatStoreBtn}</span>
           </button>
 
           <button
@@ -75,7 +77,7 @@ const Hero = () => {
             className="w-full sm:w-auto flex-1 flex items-center justify-center gap-3 px-8 py-4 bg-black/70 hover:bg-black/90 text-white border-2 border-west-gold/70 hover:border-west-gold font-brand text-2xl tracking-wider rounded-xl backdrop-blur-md shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer"
           >
             <Disc3 className="w-6 h-6 text-west-gold group-hover:spin transition-transform duration-500" />
-            <span>ALBUMS & MERCH</span>
+            <span>{t.hero.shopBtn}</span>
           </button>
         </div>
 
@@ -83,15 +85,15 @@ const Hero = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-10 w-full max-w-3xl">
           <div className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-black/50 border border-west-gold/30 backdrop-blur-md">
             <ShieldCheck className="w-5 h-5 text-west-gold shrink-0" />
-            <span className="text-xs sm:text-sm text-gray-200 font-sans tracking-wide">100% Exclusive Rights</span>
+            <span className="text-xs sm:text-sm text-gray-200 font-sans tracking-wide">{t.hero.chipExclusive}</span>
           </div>
           <div className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-black/50 border border-west-gold/30 backdrop-blur-md">
             <Music className="w-5 h-5 text-west-gold shrink-0" />
-            <span className="text-xs sm:text-sm text-gray-200 font-sans tracking-wide">Studio Master WAV Files</span>
+            <span className="text-xs sm:text-sm text-gray-200 font-sans tracking-wide">{t.hero.chipWav}</span>
           </div>
           <div className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-black/50 border border-west-gold/30 backdrop-blur-md">
             <Flame className="w-5 h-5 text-west-orange shrink-0" />
-            <span className="text-xs sm:text-sm text-gray-200 font-sans tracking-wide">Authentic California Sound</span>
+            <span className="text-xs sm:text-sm text-gray-200 font-sans tracking-wide">{t.hero.chipFlat}</span>
           </div>
         </div>
 

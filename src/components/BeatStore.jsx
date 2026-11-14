@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShoppingCart, Music, CreditCard } from 'lucide-react';
 import AudioPlayer from './AudioPlayer';
+import { useLanguage } from '../context/LanguageContext';
 
 const beatIds = [
   "126", "136", "192", "193", "207", "209",
@@ -12,6 +13,8 @@ const beatIds = [
 const soldBeats = ["315", "418", "431"];
 
 const BeatStore = () => {
+  const { t } = useLanguage();
+
   const scrollToCheckout = (beatId) => {
     const checkoutSection = document.getElementById('checkout');
     if (checkoutSection) {
@@ -33,18 +36,17 @@ const BeatStore = () => {
           <div className="flex items-center justify-center gap-4 mb-6">
             <Music className="w-12 h-12 text-west-gold animate-lowrider-bounce" />
             <h2 className="text-4xl md:text-6xl text-west-gold font-sans font-black tracking-tighter uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-              Exclusive West Coast Beats
+              {t.beatStore.title}
             </h2>
             <Music className="w-12 h-12 text-west-gold animate-lowrider-bounce" style={{ animationDelay: '0.5s' }} />
           </div>
           
           <div className="inline-block bg-black/50 border-2 border-west-gold/50 rounded-xl p-6 backdrop-blur-sm shadow-[0_0_20px_rgba(255,215,0,0.1)]">
             <h3 className="text-2xl md:text-3xl text-white font-bold mb-4 font-sans tracking-wide uppercase">
-              Price: 80€ | 100% Exclusive Rights | High-Quality Files
+              {t.beatStore.subinfoTitle}
             </h3>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
-              Once a beat is purchased, it is <span className="text-west-gold font-bold">yours forever</span> and will be removed from this store. 
-              Select the beat you want and use the checkout form at the bottom.
+              {t.beatStore.subinfoDesc}
             </p>
           </div>
         </div>
@@ -65,11 +67,11 @@ const BeatStore = () => {
                 <div className="flex justify-between items-center border-b border-gray-800 pb-2 mb-2">
                   <div className="flex items-center gap-2">
                     <h4 className={`text-xl font-bold tracking-widest ${isSold ? 'text-red-500' : 'text-west-gold'}`}>
-                      EXCLUSIVE BEAT #{id}
+                      {t.beatStore.exclusiveBeatNum}{id}
                     </h4>
                     {isSold && (
                       <span className="px-2 py-0.5 bg-red-600 text-white text-xs font-black rounded animate-pulse">
-                        SOLD
+                        {t.beatStore.soldBadge}
                       </span>
                     )}
                   </div>
@@ -93,7 +95,7 @@ const BeatStore = () => {
                 disabled={isSold}
               >
                 <ShoppingCart size={18} />
-                {isSold ? 'SOLD OUT' : `Select Beat #${id}`}
+                {isSold ? t.beatStore.soldBadge : `${t.beatStore.selectBeat}${id}`}
               </button>
             </div>
             );
@@ -106,22 +108,22 @@ const BeatStore = () => {
           {/* Action Required Box */}
           <div className="max-w-[800px] mx-auto mb-12 bg-[#FFD700]/5 border-2 border-dashed border-[#FFD700] p-8 rounded-2xl shadow-[0_0_20px_rgba(255,215,0,0.1)]">
             <h3 className="text-[#FFD700] mb-4 uppercase tracking-[3px] font-sans font-black text-xl">
-              ⚠️ ACTION REQUIRED
+              {t.beatStore.actionRequired}
             </h3>
             <p className="text-white text-lg md:text-xl font-bold mb-2">
-              DURING CHECKOUT, PLEASE SPECIFY YOUR:
+              {t.beatStore.duringCheckout}
             </p>
             <p className="text-[#FFD700] text-xl md:text-2xl font-black uppercase mb-4">
-              BEAT NUMBER (#) & EMAIL ADDRESS
+              {t.beatStore.beatNumberEmail}
             </p>
             <div className="h-px bg-zinc-800 w-1/2 mx-auto my-4"></div>
             <p className="text-gray-400 text-base italic">
-              📩 Delivery: You will receive your WAV file via email in <span className="text-white font-bold">MAXIMUM 24 HOURS</span>.
+              {t.beatStore.deliveryNotice}
             </p>
           </div>
 
           <h2 className="text-[#FFD700] uppercase tracking-[5px] mb-10 text-2xl md:text-3xl font-bold">
-            SELECT PAYMENT METHOD
+            {t.beatStore.selectPayment}
           </h2>
 
           <div className="flex flex-wrap gap-8 justify-center items-start max-w-[900px] mx-auto">
@@ -134,9 +136,9 @@ const BeatStore = () => {
                 rel="noopener noreferrer"
                 className="w-full p-8 bg-black border-[3px] border-[#FFD700] text-[#FFD700] rounded-xl transition-all duration-300 flex flex-col items-center justify-center hover:bg-[#FFD700] hover:text-black hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,215,0,0.3)] group h-[200px]"
               >
-                <span className="text-2xl font-black mb-1.5">💳 CREDIT CARD</span>
+                <span className="text-2xl font-black mb-1.5">{t.beatStore.creditCard}</span>
                 <span className="text-sm text-[#FFD700] opacity-80 tracking-widest group-hover:text-black">
-                  SECURE VIA <strong>STRIPE</strong>
+                  {t.beatStore.secureStripe}
                 </span>
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_and_MasterCard_logo.svg/1000px-Visa_and_MasterCard_logo.svg.png"
@@ -149,7 +151,7 @@ const BeatStore = () => {
             {/* PayPal Card */}
             <div className="flex-1 min-w-[300px] max-w-[380px] flex flex-col items-center">
               <div className="w-full p-8 bg-[#FFD700] border-[3px] border-[#FFD700] rounded-xl flex flex-col items-center shadow-lg box-border h-[200px]">
-                <span className="text-black text-2xl font-black mb-4">🅿️ PAYPAL</span>
+                <span className="text-black text-2xl font-black mb-4">{t.beatStore.paypalTitle}</span>
                 
                 <div id="paypal-button-container" className="w-full">
                   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" className="w-full flex flex-col gap-4">
@@ -160,7 +162,7 @@ const BeatStore = () => {
                       type="text"
                       name="os0"
                       maxLength="200"
-                      placeholder="Beat #..."
+                      placeholder={t.beatStore.placeholderNumberBeat}
                       required
                       className="w-full bg-white text-black text-center text-sm p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black/20 font-sans shadow-inner"
                     />

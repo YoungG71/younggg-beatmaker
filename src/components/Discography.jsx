@@ -1,6 +1,7 @@
 import React from 'react';
 import { musicData } from '../musicData';
 import { Disc } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const LazySpotifyEmbed = ({ album }) => {
   return (
@@ -20,6 +21,7 @@ const LazySpotifyEmbed = ({ album }) => {
 };
 
 const Discography = () => {
+  const { t } = useLanguage();
   // Sorting logic: Newest to Oldest based on 'year'
   const sortedAlbums = [...musicData].sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
@@ -30,7 +32,7 @@ const Discography = () => {
         <div className="flex items-center justify-center mb-16">
           <Disc className="w-10 h-10 text-west-gold mr-4 animate-vinyl-spin" />
           <h2 className="text-5xl md:text-7xl text-center text-west-gold drop-shadow-[0_0_5px_rgba(255,215,0,0.5)]">
-            Full Discography
+            {t.discography.title}
           </h2>
           <Disc className="w-10 h-10 text-west-gold ml-4 animate-vinyl-spin" style={{ animationDirection: 'reverse' }} />
         </div>

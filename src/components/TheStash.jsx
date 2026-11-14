@@ -1,32 +1,35 @@
 import React from 'react';
 import { artistData } from '../artistData';
 import { ShoppingBag, DollarSign } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const TheStash = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="pt-32 sm:pt-36 pb-20 px-4 min-h-screen relative overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-6xl md:text-8xl text-center text-west-gold mb-6 drop-shadow-[0_0_5px_rgba(255,215,0,0.5)] font-gothic tracking-widest">
-          BUY NOW
+          {t.shop.title}
         </h2>
 
         {/* Black Friday Promo Banner */}
         <div className="mb-10 text-center bg-gradient-to-r from-red-950/80 via-black to-red-950/80 border-2 border-red-500/60 rounded-2xl p-6 sm:p-8 shadow-[0_0_40px_rgba(220,38,38,0.35)] max-w-4xl mx-auto backdrop-blur-md relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
           <div className="inline-flex items-center gap-2 bg-red-600 text-black font-black text-xs px-3.5 py-1 rounded-full uppercase tracking-widest mb-3 animate-pulse shadow-md">
-            <span>🔥 LIMITED TIME • BLACK FRIDAY 🔥</span>
+            <span>{t.shop.bfBannerBadge}</span>
           </div>
           <h3 className="text-3xl sm:text-5xl font-brand text-white tracking-wider uppercase mb-3">
-            TRIPLE PACK PROMO — <span className="text-west-gold">34.99 €</span>
+            {t.shop.bfBannerTitle}
           </h3>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto font-sans leading-relaxed">
-            Get all 3 official albums: <span className="text-west-gold font-bold">Up The Level</span>, <span className="text-west-gold font-bold">International West Coast Shit Vol. 1</span> and <span className="text-west-gold font-bold">Vol. 2</span> for only <span className="text-west-gold font-bold">34.99 €</span> instead of <span className="line-through text-gray-500 font-semibold">59.97 €</span>!
+            {t.shop.bfBannerDesc}
           </p>
         </div>
 
         <div className="mb-10 text-center"> 
             <span className="text-west-gold border-2 border-west-gold px-5 py-2.5 font-black tracking-wider uppercase inline-block"> 
-                📦 SHIPPING INCLUDED / LIVRAISON INCLUSE 
+                {t.shop.shippingBanner} 
             </span> 
         </div> 
 
@@ -52,21 +55,21 @@ const TheStash = () => {
               {/* Best Deal Badge */}
               {!item.isBlackFriday && item.bestDeal && (
                 <div className="absolute top-0 right-0 bg-west-gold text-black font-bold px-6 py-2 transform rotate-0 z-20 shadow-lg border-l-2 border-b-2 border-white">
-                  BEST DEAL
+                  {t.shop.bestDeal}
                 </div>
               )}
               
               {/* Restocking Badge */}
               {item.isRestocking && (
                 <div className="absolute top-0 right-0 bg-purple-600 text-white font-bold px-6 py-2 transform rotate-0 z-20 shadow-lg border-l-2 border-b-2 border-white">
-                  RESTOCKING
+                  {t.shop.restocking}
                 </div>
               )}
 
               {/* Sold Out Badge */}
               {item.isSoldOut && (
                 <div className="absolute top-0 right-0 bg-red-900 text-white font-bold px-6 py-2 transform rotate-0 z-20 shadow-lg border-l-2 border-b-2 border-white">
-                  SOLD OUT
+                  {t.shop.soldOut}
                 </div>
               )}
 
@@ -187,7 +190,7 @@ const TheStash = () => {
                     
                     {/* Option 1: PayPal */}
                     <div className="w-full">
-                      <p className="text-gray-400 text-xs mb-1 uppercase">Option 1:</p>
+                      <p className="text-gray-400 text-xs mb-1 uppercase">{t.shop.option1}</p>
                       
                       <form 
                         action="https://www.paypal.com/cgi-bin/webscr" 
@@ -206,26 +209,26 @@ const TheStash = () => {
                             <input type="hidden" name="return" value="https://younggwestcoastbeatmaker.com/order-success" />
                             <input type="hidden" name="cancel_return" value="https://younggwestcoastbeatmaker.com/shop" />
                             <input type="hidden" name="rm" value="1" />
-                            <input type="hidden" name="on0" value="Demande spéciale (dédicaces etc...)" />
+                            <input type="hidden" name="on0" value="Demande spéciale / Special request" />
                           </>
                         ) : (
                           <>
                             <input type="hidden" name="cmd" value="_s-xclick" />
                             <input type="hidden" name="hosted_button_id" value={item.paypalId} />
                             <input type="hidden" name="currency_code" value="EUR" />
-                            <input type="hidden" name="on0" value="Demande spéciale (dédicaces etc...)" />
+                            <input type="hidden" name="on0" value="Demande spéciale / Special request" />
                           </>
                         )}
                         
                         <div className="flex flex-col gap-2">
                           <label htmlFor={`dedication-${item.id}`} className="text-gray-400 text-xs tracking-wider uppercase text-left">
-                            Dedication / Special Request (Optional)
+                            {t.shop.dedicationLabel}
                           </label>
                           <input 
                             type="text" 
                             name={item.dedicationName || 'os0'}
                             id={`dedication-${item.id}`}
-                            placeholder="Who is this album for?"
+                            placeholder={t.shop.dedicationPlaceholder}
                             className="bg-black border border-west-gold/50 text-white px-4 py-3 rounded focus:outline-none focus:border-west-gold focus:ring-1 focus:ring-west-gold transition-all w-full font-sans"
                           />
                         </div>
@@ -246,13 +249,13 @@ const TheStash = () => {
                             }`}
                         >
                           {item.isSoldOut ? (
-                             <span>⛔ SOLD OUT</span>
+                             <span>{t.shop.soldOutText}</span>
                           ) : !item.paypalEmail && item.paypalId === 'PENDING_PAYPAL_ID' ? (
-                             <span>⏳ PAYPAL ACTIVATION IN PROGRESS</span>
+                             <span>{t.shop.paypalPending}</span>
                           ) : (
                              <>
                                 <ShoppingBag className="w-6 h-6" />
-                                {item.buttonText === 'PRE-ORDER' ? '⏳ PRE-ORDER (PAYPAL)' : '🅿️ PAYPAL (SECURE)'}
+                                {item.buttonText === 'PRE-ORDER' ? t.shop.paypalPreOrder : t.shop.paypalButton}
                              </>
                           )}
                         </button>
@@ -265,18 +268,18 @@ const TheStash = () => {
 
                     {/* Option 2: Stripe */}
                     <div className="w-full">
-                      <p className="text-gray-400 text-xs mb-1 uppercase">Option 2:</p>
+                      <p className="text-gray-400 text-xs mb-1 uppercase">{t.shop.option2}</p>
                       
                       {item.stripeUrl && !item.isSoldOut ? (
                         <a href={item.stripeUrl} 
                            target="_blank"
                            rel="noopener noreferrer"
                            className="block w-full p-4 bg-black border border-west-gold text-west-gold no-underline text-sm font-black rounded text-center transition-all duration-300 hover:bg-west-gold hover:text-black shadow-md hover:shadow-[0_0_20px_rgba(255,215,0,0.4)]">
-                           💳 CARD (STRIPE)
+                           {t.shop.stripeButton}
                         </a>
                       ) : !item.isSoldOut && !item.stripeUrl && item.id === 207 ? (
                         <div className="p-4 bg-black/60 border border-dashed border-gray-700 text-gray-400 text-sm font-sans rounded text-center">
-                          💳 CARD (STRIPE) - Coming soon
+                          {t.shop.stripeComingSoon}
                         </div>
                       ) : null}
                     </div>
