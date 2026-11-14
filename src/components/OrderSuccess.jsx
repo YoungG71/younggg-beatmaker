@@ -22,7 +22,7 @@ const OrderSuccess = () => {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/80 border border-west-gold/40 mb-4">
             <Sparkles className="w-4 h-4 text-west-gold" />
             <span className="text-west-gold text-xs font-sans font-bold tracking-widest uppercase">
-              Payment Confirmed • Paiement Validé
+              Payment Confirmed • Commande Validée
             </span>
           </div>
 
@@ -31,7 +31,7 @@ const OrderSuccess = () => {
           </h1>
 
           <p className="text-gray-300 font-sans text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-8">
-            Merci pour votre confiance et votre soutien ! Votre commande a été enregistrée avec succès.
+            Thank you for your support! Your order has been placed and confirmed successfully.
           </p>
 
           {/* Details Box */}
@@ -43,10 +43,10 @@ const OrderSuccess = () => {
               </div>
               <div>
                 <h3 className="font-brand text-lg text-white tracking-wide uppercase">
-                  Email de confirmation automatique
+                  Automatic Confirmation Email
                 </h3>
                 <p className="text-sm font-sans text-gray-400 leading-relaxed mt-1">
-                  Un email récapitulatif contenant votre reçu de paiement sécurisé vient de vous être envoyé automatiquement par <strong>PayPal / Stripe</strong>.
+                  A receipt and order summary email has just been sent to your email address by <strong>PayPal / Stripe</strong>.
                 </p>
               </div>
             </div>
@@ -59,10 +59,10 @@ const OrderSuccess = () => {
               </div>
               <div>
                 <h3 className="font-brand text-lg text-white tracking-wide uppercase">
-                  Expédition & Dédicace
+                  Shipping & Dedication
                 </h3>
                 <p className="text-sm font-sans text-gray-400 leading-relaxed mt-1">
-                  Young G prépare soigneusement votre colis sous <strong>24 à 48 heures</strong> (avec la dédicace demandée). La livraison est incluse et suivie.
+                  Young G will carefully package your order within <strong>24 to 48 hours</strong> (including your personalized dedication if requested). Tracked shipping included.
                 </p>
               </div>
             </div>
@@ -71,7 +71,7 @@ const OrderSuccess = () => {
 
           {/* Contact note */}
           <p className="text-xs sm:text-sm font-sans text-gray-400 mb-8">
-            Une question ou une précision concernant votre commande ? Contactez directement :{' '}
+            Have questions regarding your order? Contact directly:{' '}
             <a href="mailto:djbambino@hotmail.com" className="text-west-gold hover:underline font-semibold">
               djbambino@hotmail.com
             </a>
@@ -83,14 +83,14 @@ const OrderSuccess = () => {
               onClick={() => { navigate('/shop'); window.scrollTo(0, 0); }}
               className="px-8 py-3.5 bg-west-gold text-black font-brand text-lg tracking-wider rounded-xl shadow-[0_0_20px_rgba(255,215,0,0.4)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer font-bold"
             >
-              RETOUR À LA BOUTIQUE
+              BACK TO SHOP
             </button>
             <button
               onClick={() => { navigate('/music'); window.scrollTo(0, 0); }}
               className="px-8 py-3.5 bg-black/60 text-white border border-gray-700 hover:border-west-gold font-brand text-lg tracking-wider rounded-xl transition-all duration-200 cursor-pointer inline-flex items-center justify-center gap-2"
             >
               <Disc className="w-4 h-4 text-west-gold" />
-              <span>DÉCOUVRIR LES SONS</span>
+              <span>DISCOVER MUSIC</span>
             </button>
           </div>
 

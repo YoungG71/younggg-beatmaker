@@ -271,7 +271,7 @@ const HomeContent = () => {
 
               <div className="py-1 px-4 rounded-full bg-black/80 border border-west-gold/40 text-center">
                 <span className="text-xs text-west-gold font-sans font-bold tracking-widest uppercase">
-                  💿 3 CD PHYSIQUES OFFICIELS INCLUS
+                  💿 3 OFFICIAL PHYSICAL CDs INCLUDED
                 </span>
               </div>
             </div>

@@ -14,13 +14,13 @@ const TheStash = () => {
         <div className="mb-10 text-center bg-gradient-to-r from-red-950/80 via-black to-red-950/80 border-2 border-red-500/60 rounded-2xl p-6 sm:p-8 shadow-[0_0_40px_rgba(220,38,38,0.35)] max-w-4xl mx-auto backdrop-blur-md relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
           <div className="inline-flex items-center gap-2 bg-red-600 text-black font-black text-xs px-3.5 py-1 rounded-full uppercase tracking-widest mb-3 animate-pulse shadow-md">
-            <span>🔥 OFFRE LIMITÉE • BLACK FRIDAY 🔥</span>
+            <span>🔥 LIMITED TIME • BLACK FRIDAY 🔥</span>
           </div>
           <h3 className="text-3xl sm:text-5xl font-brand text-white tracking-wider uppercase mb-3">
-            TRIPLE PACK PROMO — <span className="text-west-gold">34,99 €</span>
+            TRIPLE PACK PROMO — <span className="text-west-gold">34.99 €</span>
           </h3>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto font-sans leading-relaxed">
-            Profitez des 3 albums officiels réunis : <span className="text-west-gold font-bold">Up The Level</span>, <span className="text-west-gold font-bold">International West Coast Shit Vol. 1</span> et <span className="text-west-gold font-bold">Vol. 2</span> pour seulement <span className="text-west-gold font-bold">34,99 €</span> au lieu de <span className="line-through text-gray-500 font-semibold">59,97 €</span> !
+            Get all 3 official albums: <span className="text-west-gold font-bold">Up The Level</span>, <span className="text-west-gold font-bold">International West Coast Shit Vol. 1</span> and <span className="text-west-gold font-bold">Vol. 2</span> for only <span className="text-west-gold font-bold">34.99 €</span> instead of <span className="line-through text-gray-500 font-semibold">59.97 €</span>!
           </p>
         </div>
 
@@ -127,7 +127,7 @@ const TheStash = () => {
 
                       <div className="py-2 px-3 rounded-lg bg-black/80 border border-west-gold/30 text-center">
                         <span className="text-xs text-west-gold font-sans font-bold tracking-widest uppercase">
-                          💿 3 CD PHYSIQUES OFFICIELS INCLUS
+                          💿 3 OFFICIAL PHYSICAL CDs INCLUDED
                         </span>
                       </div>
                     </div>
@@ -248,7 +248,7 @@ const TheStash = () => {
                           {item.isSoldOut ? (
                              <span>⛔ SOLD OUT</span>
                           ) : !item.paypalEmail && item.paypalId === 'PENDING_PAYPAL_ID' ? (
-                             <span>⏳ ACTIVATION PAYPAL EN COURS</span>
+                             <span>⏳ PAYPAL ACTIVATION IN PROGRESS</span>
                           ) : (
                              <>
                                 <ShoppingBag className="w-6 h-6" />
@@ -276,7 +276,7 @@ const TheStash = () => {
                         </a>
                       ) : !item.isSoldOut && !item.stripeUrl && item.id === 207 ? (
                         <div className="p-4 bg-black/60 border border-dashed border-gray-700 text-gray-400 text-sm font-sans rounded text-center">
-                          💳 CARD (STRIPE) - Lien bientôt disponible
+                          💳 CARD (STRIPE) - Coming soon
                         </div>
                       ) : null}
                     </div>
