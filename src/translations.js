@@ -61,6 +61,11 @@ export const translations = {
       videoTitle: "Video",
       videoSpan: "Productions",
       videoDesc: "Discover a selection of official music videos and tracks recorded over Young G productions.",
+      latestAlbumBadge: "Official 2026 Release",
+      latestAlbumTitle: "New",
+      latestAlbumSpan: "Album Out Now",
+      latestAlbumDesc: "Stream Young G's brand new project \"Tha 94' French Connection\" directly on Spotify.",
+      exploreDiscography: "EXPLORE FULL DISCOGRAPHY",
       newReleaseAvailable: "New Release Available Now",
       orderMyCopy: "ORDER MY COPY",
       viewAllPacks: "VIEW ALL SHOP & PACKS",
@@ -106,6 +111,7 @@ export const translations = {
     },
     discography: {
       title: "Full Discography",
+      newBadge: "NEW RELEASE",
     },
     contact: {
       title: "CONTACT",
@@ -210,6 +216,11 @@ export const translations = {
       videoTitle: "Productions",
       videoSpan: "Vidéos",
       videoDesc: "Découvrez une sélection de clips officiels et de morceaux enregistrés sur les productions de Young G.",
+      latestAlbumBadge: "Sortie Officielle 2026",
+      latestAlbumTitle: "Nouvel",
+      latestAlbumSpan: "Album Disponible",
+      latestAlbumDesc: "Écoutez en streaming le tout nouveau projet de Young G « Tha 94' French Connection » directement sur Spotify.",
+      exploreDiscography: "DÉCOUVRIR TOUTE LA DISCOGRAPHIE",
       newReleaseAvailable: "Nouvelle Sortie Disponible",
       orderMyCopy: "COMMANDER MON EXEMPLAIRE",
       viewAllPacks: "VOIR TOUTE LA BOUTIQUE",
@@ -255,6 +266,7 @@ export const translations = {
     },
     discography: {
       title: "Discographie Complète",
+      newBadge: "NOUVEL ALBUM",
     },
     contact: {
       title: "CONTACT",

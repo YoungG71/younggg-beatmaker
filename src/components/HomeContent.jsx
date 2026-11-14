@@ -382,6 +382,52 @@ const HomeContent = () => {
       ) : null}
 
       {/* ============================================================ */}
+      {/* SECTION: LATEST ALBUM STREAMING (SPOTIFY) */}
+      {/* ============================================================ */}
+      <section className="bg-black/85 border border-west-gold/40 rounded-3xl p-6 sm:p-10 backdrop-blur-md shadow-[0_0_40px_rgba(0,0,0,0.9)]">
+        <div className="flex flex-col items-center justify-center text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/70 border border-west-gold/40 mb-3 backdrop-blur-md">
+            <Sparkles className="w-4 h-4 text-west-gold" />
+            <span className="text-west-gold text-xs font-sans font-bold tracking-widest uppercase">
+              {t.home.latestAlbumBadge}
+            </span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-brand tracking-wider text-white uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+            {t.home.latestAlbumTitle} <span className="gold-shimmer-text">{t.home.latestAlbumSpan}</span>
+          </h2>
+          <p className="mt-3 text-gray-300 font-sans max-w-2xl text-sm sm:text-base">
+            {t.home.latestAlbumDesc}
+          </p>
+        </div>
+
+        <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden border-2 border-west-gold/60 shadow-[0_0_30px_rgba(255,215,0,0.2)] bg-black p-2">
+          <iframe
+            data-testid="embed-iframe"
+            style={{ borderRadius: '12px' }}
+            src="https://open.spotify.com/embed/album/3ZA2LT07Jo2si1a8Z95vD1?utm_source=generator&theme=0"
+            width="100%"
+            height="352"
+            frameBorder="0"
+            allowFullScreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="Young G - Tha 94' French Connection"
+          />
+        </div>
+
+        <div className="text-center mt-8">
+          <button
+            onClick={() => { navigate('/music'); window.scrollTo(0, 0); }}
+            className="inline-flex items-center gap-3 px-8 py-3.5 bg-black/70 hover:bg-black/90 text-white border-2 border-west-gold/70 hover:border-west-gold font-brand text-lg tracking-wider rounded-xl backdrop-blur-md shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer"
+          >
+            <Disc className="w-5 h-5 text-west-gold" />
+            <span>{t.home.exploreDiscography}</span>
+            <ArrowRight className="w-5 h-5 text-west-gold" />
+          </button>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
       {/* SECTION 4: VIDEO PRODUCTIONS (Curated & Fast) */}
       {/* ============================================================ */}
       <section className="bg-black/85 border border-west-gold/40 rounded-3xl p-6 sm:p-10 backdrop-blur-md shadow-[0_0_40px_rgba(0,0,0,0.9)]">

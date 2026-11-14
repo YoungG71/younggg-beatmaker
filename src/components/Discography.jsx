@@ -51,6 +51,12 @@ const Discography = () => {
               <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-west-gold z-20 group-hover:border-white transition-colors duration-300"></div>
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-west-gold z-20 group-hover:border-white transition-colors duration-300"></div>
 
+              {album.isNew && (
+                <div className="absolute top-3 right-3 z-30 px-3 py-1 bg-gradient-to-r from-red-600 to-amber-500 text-black font-brand text-xs tracking-wider rounded border border-west-gold font-bold uppercase shadow-[0_0_15px_rgba(255,215,0,0.5)] animate-pulse">
+                  {t.discography.newBadge}
+                </div>
+              )}
+
               {/* Release Year Label - West Coast Style */}
               <div className="bg-black border-b-2 border-west-gold/50 p-4 text-center relative z-10">
                 <h2 className="year-title" style={{

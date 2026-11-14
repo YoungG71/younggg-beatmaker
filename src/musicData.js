@@ -1,5 +1,12 @@
 export const musicData = [
   {
+    id: "album-tha-94-french-connection",
+    title: "Tha 94' French Connection",
+    year: "2026",
+    spotifyId: "3ZA2LT07Jo2si1a8Z95vD1",
+    isNew: true
+  },
+  {
     id: "album-jean-luc-melanchon",
     title: "Jean Luc Mélanchon",
     year: "2026",
