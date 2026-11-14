@@ -35,6 +35,7 @@ const soundBadges = [
 
 const HomeContent = () => {
   const navigate = useNavigate();
+  const triplePack = artistData.shop.find(item => item.id === 207);
   const upTheLevelCD = artistData.shop.find(item => item.id === 204);
   const doublePack = artistData.shop.find(item => item.id === 203);
 
@@ -218,7 +219,81 @@ const HomeContent = () => {
       {/* ============================================================ */}
       {/* SECTION 3: THE STASH / PHYSICAL RELEASES (CDs) */}
       {/* ============================================================ */}
-      {upTheLevelCD && (
+      {triplePack ? (
+        <section className="bg-gradient-to-r from-red-950/80 via-black to-red-950/80 border-2 border-red-500/70 rounded-3xl p-8 sm:p-12 shadow-[0_0_40px_rgba(220,38,38,0.3)] relative overflow-hidden">
+          <div className="absolute top-0 right-0 bg-gradient-to-r from-red-600 to-amber-500 text-black font-black text-xs sm:text-sm px-6 py-2 rounded-bl-xl shadow-lg uppercase tracking-widest animate-pulse">
+            🔥 BLACK FRIDAY DEAL (-42%)
+          </div>
+
+          <div className="flex flex-col lg:flex-row items-center gap-10 justify-between mt-4 sm:mt-0">
+            {/* 3 CDs 3D fan presentation */}
+            <div className="relative group shrink-0 py-4">
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-600 via-west-gold to-red-600 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500" />
+              <div className="relative flex items-center justify-center w-72 sm:w-88 h-48 sm:h-56">
+                <img
+                  src={triplePack.image[0]}
+                  alt="Up The Level"
+                  className="absolute w-36 h-36 sm:w-44 sm:h-44 object-cover rounded-xl border border-west-gold/60 shadow-2xl transform -rotate-12 -translate-x-12 group-hover:-rotate-16 group-hover:-translate-x-16 transition-all duration-300"
+                />
+                <img
+                  src={triplePack.image[1]}
+                  alt="International West Coast Shit Vol 1"
+                  className="absolute w-40 h-40 sm:w-48 sm:h-48 object-cover rounded-xl border-2 border-west-gold shadow-[0_15px_35px_rgba(0,0,0,0.9)] z-20 group-hover:scale-105 transition-all duration-300"
+                />
+                <img
+                  src={triplePack.image[2]}
+                  alt="International West Coast Shit Vol 2"
+                  className="absolute w-36 h-36 sm:w-44 sm:h-44 object-cover rounded-xl border border-west-gold/60 shadow-2xl transform rotate-12 translate-x-12 group-hover:rotate-16 group-hover:translate-x-16 transition-all duration-300 z-10"
+                />
+              </div>
+            </div>
+
+            {/* Pack Info */}
+            <div className="flex-grow text-center lg:text-left">
+              <div className="inline-block text-xs font-sans text-red-400 font-bold uppercase tracking-widest bg-red-950/60 border border-red-500/40 px-3 py-1 rounded-full mb-2">
+                Special Event • The Complete Trilogy
+              </div>
+              <h3 className="text-3xl sm:text-5xl font-brand text-white tracking-wider uppercase mt-1 mb-2">
+                TRIPLE DISC PACK (3 CDs)
+              </h3>
+              <p className="text-gray-300 font-sans text-sm sm:text-base max-w-xl mb-4">
+                Get all 3 official physical CDs: <strong className="text-white">Up The Level</strong> + <strong className="text-white">International West Coast Shit Vol. 1 & Vol. 2</strong>. Signed dedication available upon request.
+              </p>
+              
+              <div className="flex flex-wrap items-baseline justify-center lg:justify-start gap-4 mb-2">
+                <span className="text-4xl sm:text-5xl font-brand text-west-gold tracking-wider font-bold">
+                  {triplePack.price} €
+                </span>
+                {triplePack.originalPrice && (
+                  <span className="text-2xl text-gray-500 line-through font-semibold">
+                    {triplePack.originalPrice} €
+                  </span>
+                )}
+                <span className="text-xs font-sans text-green-400 font-bold uppercase tracking-widest border border-green-500/50 bg-green-950/50 px-3 py-1 rounded-full">
+                  📦 Shipping Included
+                </span>
+              </div>
+            </div>
+
+            {/* Shop CTAs */}
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0 w-full sm:w-auto">
+              <button
+                onClick={() => { navigate('/shop'); window.scrollTo(0, 0); }}
+                className="px-8 py-4 bg-gradient-to-r from-red-600 via-amber-500 to-west-gold text-black font-brand text-xl tracking-wider rounded-xl shadow-[0_0_25px_rgba(220,38,38,0.5)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer font-black"
+              >
+                ORDER TRIPLE PACK (34,99 €)
+              </button>
+              <button
+                onClick={() => { navigate('/shop'); window.scrollTo(0, 0); }}
+                className="px-8 py-3.5 bg-black/60 text-white border border-gray-700 hover:border-west-gold font-brand text-lg tracking-wider rounded-xl transition-all duration-200 cursor-pointer text-center"
+              >
+                VIEW ALL SHOP & CD ITEMS
+              </button>
+            </div>
+
+          </div>
+        </section>
+      ) : upTheLevelCD ? (
         <section className="bg-gradient-to-r from-black/90 via-black/80 to-black/90 border-2 border-west-gold/60 rounded-3xl p-8 sm:p-12 shadow-[0_0_35px_rgba(255,215,0,0.15)]">
           <div className="flex flex-col md:flex-row items-center gap-8 justify-between">
             
@@ -274,7 +349,7 @@ const HomeContent = () => {
 
           </div>
         </section>
-      )}
+      ) : null}
 
       {/* ============================================================ */}
       {/* SECTION 4: VIDEO PRODUCTIONS (Curated & Fast) */}

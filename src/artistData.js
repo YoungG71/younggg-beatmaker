@@ -10,6 +10,23 @@ export const artistData = {
   },
   shop: [
     {
+      id: 207,
+      name: "TRIPLE DISC PACK",
+      subtitle: "The Complete Trilogy",
+      price: "34.99",
+      originalPrice: "59.97",
+      image: ["/upthelevel.webp", "/album1.webp", "/album2.webp"],
+      description: "Black Friday Special: Get the full trilogy! Up The Level + International West Coast Shit Vol. 1 & Vol. 2. Shipping included worldwide.",
+      paypalEmail: "djbambino@hotmail.com",
+      itemName: "Young G - TRIPLE DISC PACK (3 CDs Black Friday)",
+      stripeUrl: "",
+      dedicationName: "os0",
+      isPack: true,
+      bestDeal: true,
+      isBlackFriday: true,
+      buttonText: "ORDER THE TRIPLE PACK"
+    },
+    {
       id: 204,
       name: "Up The Level",
       subtitle: "Young G Presents",
@@ -17,6 +34,7 @@ export const artistData = {
       image: "/upthelevel.webp",
       description: "Available now. Get your copy today!",
       paypalId: "VHLQ8JJBMU7DW",
+      stripeUrl: "https://buy.stripe.com/dRm00k9Q61aJ88Y23s73G04",
       dedicationName: "os0",
       isPack: false,
       isRestocking: false,
@@ -30,6 +48,7 @@ export const artistData = {
       image: "/album1.webp",
       description: "The first chapter. Pure West Coast vibes.",
       paypalId: "39T47NFW5LREY",
+      stripeUrl: "https://buy.stripe.com/14A14o1jA6v3bladMa73G01",
       dedicationName: "os0",
       isPack: false,
       buttonText: "BUY NOW"
@@ -42,6 +61,7 @@ export const artistData = {
       image: "/album2.webp",
       description: "The saga continues. Harder beats, smoother synths.",
       paypalId: "7HBWX3Q5EAFTQ",
+      stripeUrl: "https://buy.stripe.com/5kQ4gAbYe4mVgFueQe73G02",
       dedicationName: "os0",
       isPack: false,
       buttonText: "BUY NOW"
@@ -54,9 +74,10 @@ export const artistData = {
       image: ["/album1.webp", "/album2.webp"],
       description: "Get the complete collection. Both volumes included at a special price.",
       paypalId: "QEDW46HYQF6H6",
+      stripeUrl: "https://buy.stripe.com/cNifZid2i6v3ah64bA73G03",
       dedicationName: "os0",
       isPack: true,
-      bestDeal: true,
+      bestDeal: false,
       buttonText: "ORDER THE PACK"
     },
     {

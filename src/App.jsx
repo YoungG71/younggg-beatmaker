@@ -14,6 +14,7 @@ const HomeContent = lazy(() => import('./components/HomeContent'));
 const Discography = lazy(() => import('./components/Discography'));
 const BeatStore = lazy(() => import('./components/BeatStore'));
 const TheStash = lazy(() => import('./components/TheStash'));
+const OrderSuccess = lazy(() => import('./components/OrderSuccess'));
 const Contact = lazy(() => import('./components/Contact'));
 const NotFound = lazy(() => import('./components/NotFound'));
 
@@ -106,6 +107,7 @@ function App() {
             <Route path="/music" element={<Discography />} />
             <Route path="/beat-store" element={<BeatStore />} />
             <Route path="/shop" element={<TheStash />} />
+            <Route path="/order-success" element={<OrderSuccess />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

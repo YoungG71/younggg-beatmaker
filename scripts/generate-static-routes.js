@@ -9,6 +9,7 @@ const routes = [
   '/music',
   '/beat-store',
   '/shop',
+  '/order-success',
   '/contact',
 ];
 
