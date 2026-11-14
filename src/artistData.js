@@ -19,7 +19,7 @@ export const artistData = {
       description: "Black Friday Special: Get the full trilogy! Up The Level + International West Coast Shit Vol. 1 & Vol. 2. Shipping included worldwide.",
       paypalEmail: "djbambino@hotmail.com",
       itemName: "Young G - TRIPLE DISC PACK (3 CDs Black Friday)",
-      stripeUrl: "",
+      stripeUrl: "https://buy.stripe.com/5kQdRa4vMdXv1KAgYm73G05",
       dedicationName: "os0",
       isPack: true,
       bestDeal: true,

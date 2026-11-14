@@ -80,30 +80,55 @@ const TheStash = () => {
                 {/* Image Section */}
                 <div className="w-full md:w-5/12">
                   {Array.isArray(item.image) && item.image.length === 3 ? (
-                    <div className="relative h-64 sm:h-72 w-full flex items-center justify-center py-2">
-                      <div className="relative w-32 h-32 sm:w-40 sm:h-40 transform -rotate-12 -translate-x-6 sm:-translate-x-10 transition-transform duration-500 group-hover:-rotate-[16deg] group-hover:-translate-x-12 z-10">
-                        <img 
-                          src={item.image[0]} 
-                          alt="Up The Level" 
-                          className="w-full h-full object-cover rounded shadow-2xl border border-west-gold/50"
-                          loading="lazy"
-                        />
+                    <div className="w-full flex flex-col gap-3 py-2">
+                      <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                        <div className="relative aspect-square rounded-xl overflow-hidden border-2 border-west-gold shadow-lg hover:border-white hover:scale-105 transition-all duration-300">
+                          <img 
+                            src={item.image[0]} 
+                            alt="Up The Level" 
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-x-0 bottom-0 bg-black/90 py-1 text-center border-t border-west-gold/30">
+                            <span className="text-[10px] sm:text-xs font-brand text-west-gold uppercase tracking-wider block truncate px-1">
+                              Up The Level
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="relative aspect-square rounded-xl overflow-hidden border-2 border-west-gold shadow-lg hover:border-white hover:scale-105 transition-all duration-300">
+                          <img 
+                            src={item.image[1]} 
+                            alt="Vol. 1" 
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-x-0 bottom-0 bg-black/90 py-1 text-center border-t border-west-gold/30">
+                            <span className="text-[10px] sm:text-xs font-brand text-west-gold uppercase tracking-wider block truncate px-1">
+                              Vol. 1
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="relative aspect-square rounded-xl overflow-hidden border-2 border-west-gold shadow-lg hover:border-white hover:scale-105 transition-all duration-300">
+                          <img 
+                            src={item.image[2]} 
+                            alt="Vol. 2" 
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-x-0 bottom-0 bg-black/90 py-1 text-center border-t border-west-gold/30">
+                            <span className="text-[10px] sm:text-xs font-brand text-west-gold uppercase tracking-wider block truncate px-1">
+                              Vol. 2
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="relative w-36 h-36 sm:w-44 sm:h-44 transform -translate-y-2 transition-transform duration-500 group-hover:-translate-y-4 z-20 shadow-[0_10px_30px_rgba(0,0,0,0.9)]">
-                        <img 
-                          src={item.image[1]} 
-                          alt="International West Coast Shit Vol 1" 
-                          className="w-full h-full object-cover rounded shadow-2xl border-2 border-west-gold"
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="relative w-32 h-32 sm:w-40 sm:h-40 transform rotate-12 -translate-x-6 sm:-translate-x-10 transition-transform duration-500 group-hover:rotate-[16deg] group-hover:-translate-x-4 z-30">
-                        <img 
-                          src={item.image[2]} 
-                          alt="International West Coast Shit Vol 2" 
-                          className="w-full h-full object-cover rounded shadow-2xl border border-west-gold/50"
-                          loading="lazy"
-                        />
+
+                      <div className="py-2 px-3 rounded-lg bg-black/80 border border-west-gold/30 text-center">
+                        <span className="text-xs text-west-gold font-sans font-bold tracking-widest uppercase">
+                          💿 3 CD PHYSIQUES OFFICIELS INCLUS
+                        </span>
                       </div>
                     </div>
                   ) : item.isPack ? (

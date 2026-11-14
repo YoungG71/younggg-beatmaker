@@ -226,25 +226,53 @@ const HomeContent = () => {
           </div>
 
           <div className="flex flex-col lg:flex-row items-center gap-10 justify-between mt-4 sm:mt-0">
-            {/* 3 CDs 3D fan presentation */}
-            <div className="relative group shrink-0 py-4">
-              <div className="absolute -inset-2 bg-gradient-to-r from-red-600 via-west-gold to-red-600 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500" />
-              <div className="relative flex items-center justify-center w-72 sm:w-88 h-48 sm:h-56">
-                <img
-                  src={triplePack.image[0]}
-                  alt="Up The Level"
-                  className="absolute w-36 h-36 sm:w-44 sm:h-44 object-cover rounded-xl border border-west-gold/60 shadow-2xl transform -rotate-12 -translate-x-12 group-hover:-rotate-16 group-hover:-translate-x-16 transition-all duration-300"
-                />
-                <img
-                  src={triplePack.image[1]}
-                  alt="International West Coast Shit Vol 1"
-                  className="absolute w-40 h-40 sm:w-48 sm:h-48 object-cover rounded-xl border-2 border-west-gold shadow-[0_15px_35px_rgba(0,0,0,0.9)] z-20 group-hover:scale-105 transition-all duration-300"
-                />
-                <img
-                  src={triplePack.image[2]}
-                  alt="International West Coast Shit Vol 2"
-                  className="absolute w-36 h-36 sm:w-44 sm:h-44 object-cover rounded-xl border border-west-gold/60 shadow-2xl transform rotate-12 translate-x-12 group-hover:rotate-16 group-hover:translate-x-16 transition-all duration-300 z-10"
-                />
+            {/* 3 Covers Showcase */}
+            <div className="shrink-0 flex flex-col items-center gap-3">
+              <div className="flex items-center justify-center gap-2.5 sm:gap-4">
+                <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-xl overflow-hidden border-2 border-west-gold shadow-2xl hover:scale-105 transition-all duration-300">
+                  <img
+                    src={triplePack.image[0]}
+                    alt="Up The Level"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-black/90 py-1 text-center border-t border-west-gold/30">
+                    <span className="text-[10px] sm:text-xs font-brand text-west-gold uppercase tracking-wider block truncate px-1">
+                      Up The Level
+                    </span>
+                  </div>
+                </div>
+
+                <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-xl overflow-hidden border-2 border-west-gold shadow-[0_0_25px_rgba(255,215,0,0.35)] hover:scale-105 transition-all duration-300">
+                  <img
+                    src={triplePack.image[1]}
+                    alt="Vol. 1"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-black/90 py-1 text-center border-t border-west-gold/30">
+                    <span className="text-[10px] sm:text-xs font-brand text-west-gold uppercase tracking-wider block truncate px-1">
+                      Vol. 1
+                    </span>
+                  </div>
+                </div>
+
+                <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-xl overflow-hidden border-2 border-west-gold shadow-2xl hover:scale-105 transition-all duration-300">
+                  <img
+                    src={triplePack.image[2]}
+                    alt="Vol. 2"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-black/90 py-1 text-center border-t border-west-gold/30">
+                    <span className="text-[10px] sm:text-xs font-brand text-west-gold uppercase tracking-wider block truncate px-1">
+                      Vol. 2
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="py-1 px-4 rounded-full bg-black/80 border border-west-gold/40 text-center">
+                <span className="text-xs text-west-gold font-sans font-bold tracking-widest uppercase">
+                  💿 3 CD PHYSIQUES OFFICIELS INCLUS
+                </span>
               </div>
             </div>
 
